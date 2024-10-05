@@ -1,0 +1,12 @@
+.elemntNavbar{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-shadow: sticky;
+
+}
+.black{
+    background-color: black;
+}
