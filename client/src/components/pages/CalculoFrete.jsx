@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from '../layout/NavBarElement'
+import NavBarClient from '../layout/NavBarClient'
 
 function CalculoFrete() {
   return (
     <>
-      <NavBar />
+      <NavBarClient />
       <div className='frete'>
         <div className='calculo'>
           <div>
@@ -44,8 +44,6 @@ function CalculoFrete() {
           <div className='entega_3d'>
             <div>Entrega em 3 dias</div>
           </div>
-          
-
         </div>
       </div>
     </>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './NavBar.module.css';
+import styles from './NavBarClient.module.css';
 
-function NavBar() {
+function NavBarClient() {
   return (
     <div className = {styles.black}>
       <nav className={`${styles.elemntNavbar} container`}>
@@ -15,4 +15,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default NavBarClient
