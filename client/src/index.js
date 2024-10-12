@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // Remova ou comente a linha abaixo
 // import reportWebVitals from './reportWebVitals';
 
