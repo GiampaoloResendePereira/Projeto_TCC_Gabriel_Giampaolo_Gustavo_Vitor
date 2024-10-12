@@ -1,6 +1,6 @@
 // src/pages/Administrador/TelaAdministrador.jsx
 import React from 'react';
-import './TelaAdministrador.css'; // Importa o CSS para aplicar o estilo
+import './TelaAdministrador'; // Importa o CSS para aplicar o estilo
 import logo from '../../assets/img/logo.png'; // Caminho ajustado para a logo
 
 const TelaAdministrador = () => {

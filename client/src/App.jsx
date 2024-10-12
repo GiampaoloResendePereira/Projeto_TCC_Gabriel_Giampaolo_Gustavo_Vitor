@@ -2,10 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TelaAdministrador from './pages/Administrador/TelaAdministrador';
-import GerenciamentoEntrega from './pages/GerenciamentoEntrega';
-import EditarParametro from './pages/EditarParametro';
-import EditarPerfis from './pages/EditarPerfis';
-import Relatorios from './pages/Relatorios';
+import GerenciamentoEntrega from './pages/Administrador/GerenciamentoEntrega';
+import EditarParametro from './pages/Administrador/EditarParametro';
+import EditarPerfis from './pages/Administrador/EditarPerfis';
+import Relatorios from './pages/Administrador/Relatorios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
