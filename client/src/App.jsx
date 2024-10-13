@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
+import InfoAdicional from './components/pages/calculoFrete/InfoAdicional';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<InfoAdicional/>} />
-  
+        <Route path='/informacoes_adicionais' element={<InfoAdicional/>} />
       </Routes>
     </Router>
   );

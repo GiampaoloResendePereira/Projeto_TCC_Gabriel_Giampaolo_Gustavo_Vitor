@@ -1,0 +1,44 @@
+/* Garantir que a navbar ocupe a largura total da tela e a parte de cima */
+.navbar {
+    width: 100%; /* Ocupar toda a largura da tela */
+    height: 100px; /* Altura da navbar */
+    background-color: black; /* Cor de fundo da navbar */
+    position: fixed; /* Fixa no topo da página */
+    top: 0; /* Posicionada no topo */
+    left: 0; /* Inicia no início do eixo horizontal */
+    z-index: 1000; /* Garantir que a navbar fique no topo de outros elementos */
+    display: flex; /* Usar flexbox para controlar o layout */
+    align-items: center; /* Centralizar os itens verticalmente */
+    justify-content: center; /* Centralizar os itens horizontalmente */
+}
+
+/* Certifique-se que a página abaixo da navbar tenha o espaço correto */
+body {
+    margin: 0; /* Remove margem padrão do body */
+    padding: 0; /* Remove padding padrão do body */
+}
+
+.container {
+    padding-top: 120px; /* Adiciona espaço abaixo da navbar para não sobrepor o conteúdo */
+}
+
+.navbar-links {
+    list-style: none; /* Remove o estilo de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinhar os links horizontalmente */
+    justify-content: center; /* Centralizar os links */
+}
+
+.navbar-links li {
+    margin: 0 15px; /* Espaçamento entre os links */
+}
+
+.navbar-links li {
+    font-size: 24px; /* Aumenta o tamanho da fonte */
+    color: white; /* Define a cor branca para o texto */
+}
+
+.navbar-links a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}

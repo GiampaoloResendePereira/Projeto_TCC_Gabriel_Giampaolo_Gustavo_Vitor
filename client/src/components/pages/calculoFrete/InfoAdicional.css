@@ -1,0 +1,53 @@
+.palavras {
+    color: black;
+}
+
+.info-form {
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+.col .info-form {
+    width: 100%; /* Ocupa toda a largura da coluna */
+}
+
+.btn-pedir {
+    width: 100%; 
+    padding: 10px; 
+    background-color: red; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    margin-top: 1rem;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Espaçamento igual entre as colunas */
+    flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha se necessário */
+    margin-bottom: 1rem;
+}
+
+.col {
+    flex: 1 1 48%; /* Ajusta a largura das colunas para ocupar cerca de 48% da largura disponível */
+    margin-right: 1rem;
+    box-sizing: border-box;
+}
+
+.col:last-child {
+    margin-right: 0; /* Remove o espaçamento à direita da última coluna */
+}
+
+/* Para garantir que o layout fique responsivo */
+@media (max-width: 768px) {
+    .col {
+        flex: 1 1 100%; /* Colunas ocupam 100% da largura em telas menores */
+        margin-right: 0; /* Remove a margem lateral */
+    }
+}
