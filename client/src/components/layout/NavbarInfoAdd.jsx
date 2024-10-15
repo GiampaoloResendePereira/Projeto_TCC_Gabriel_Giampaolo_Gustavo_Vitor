@@ -5,9 +5,7 @@ function NavbarInfoAdd() {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <ul className="navbar-links">
-                    <li>Informações Adicionais</li> {/* Adiciona o texto na navbar */}
-                </ul>
+                <h1 className="navbar-text">Informações Adicionais</h1>
             </div>
         </nav>
     );
