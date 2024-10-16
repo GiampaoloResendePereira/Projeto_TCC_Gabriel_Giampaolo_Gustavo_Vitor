@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function AulasCadastradas() {
+function PedidosCadastrados() {
     const [pedidos, setPedidos] = useState([]);
 
     useEffect(() => {
@@ -41,4 +41,4 @@ function AulasCadastradas() {
     );
 }
 
-export default AulasCadastradas;
+export default PedidosCadastrados;
