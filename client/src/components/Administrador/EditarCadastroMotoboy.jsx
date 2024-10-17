@@ -1,7 +1,7 @@
 import React, {  useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './EditarCadastroMotoboy.css';
-import motoboyData from '../../data/motoboy.json'; // Importando o JSON
+import motoboyData from '../../data/cadastromotoboy.json'; // Importando o JSON
 
 const EditarCadastroMotoboy = () => {
   const [motoboy, setMotoboy] = useState({
