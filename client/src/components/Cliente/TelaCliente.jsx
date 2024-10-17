@@ -1,13 +1,12 @@
-// src/components/TelaInicio.jsx
+// src/pages/Administrador/TelaAdministrador.jsx
 import React from 'react';
-import './TelaInicio.css'; // Importa o CSS para aplicar o estilo
+import './TelaCliente.css'; // Importa o CSS para aplicar o estilo
 import logo from '../../assets/img/logo.png'; // Caminho ajustado para a logo
-import CarrosselPromocoes from './CarrosselPromocoes'; // Importa o componente do carrossel
 
-const TelaInicio = () => {
+const TelaCliente = () => {
   return (
-    <div className='inicio-container'>
-      {/* Navbar */}
+    <div className="cliente-container">
+      {/* Navbar com Bootstrap */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
           {/* Logo à esquerda */}
@@ -32,25 +31,23 @@ const TelaInicio = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto"> {/* Alinha os itens à direita */}
               <li className="nav-item">
-                <a className="nav-link" href="simulador-frete">Simulador de Frete</a>
+                <a className="nav-link" href="/gerenciamento-entregas">Solicitação de Entrega</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login">Login</a>
+                <a className="nav-link" href="/editar-parametro">Acompanhamento de Entregas</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/cadastrar-motoboy">Cadastrar</a>
+                <a className="nav-link" href="/editar-cadastro-motoboy">Historico de Compras</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/relatorios">Editar Perfil</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      
-      {/* Carrossel de Promoções */}
-      <div className="carrossel-container mt-5 pt-4">
-        <CarrosselPromocoes />
-      </div>
     </div>
   );
 };
 
-export default TelaInicio;
+export default TelaCliente;
