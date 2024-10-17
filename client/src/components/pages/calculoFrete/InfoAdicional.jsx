@@ -1,157 +1,92 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./InfoAdicional.css";
-import NavbarInfoAdd from "../../layout/NavbarInfoAdd";
+import React, { useState } from 'react';
+import './InfoAdicional.css'; 
+import { useNavigate } from 'react-router-dom';
 
-function InfoAdicional() {
-  const [formData, setFormData] = useState({
-    logradouro: "",
-    bairro: "",
-    numero: "",
-    complemento: "",
-    nomeRemetente: "",
-    celular: "",
-    cpfCnpj: "",
-    email: "",
-    logradouroDestinatario: "",
-    bairroDestinatario: "",
-    numeroDestinatario: "",
-    complementoDestinatario: "",
-    nomeDestinatario: "",
-    celularDestinatario: "",
-    cpfCnpjDestinatario: "",
-  });
+const InfoAdicional = () => {
+    const navigate = useNavigate();
+    const [pedido, setPedido] = useState({
+        remetente: {
+            logradouro: '',
+            bairro: '',
+            numero: '',
+            complemento: '',
+            nome: '',
+            celular: '',
+            cpfCnpj: '',
+            email: ''
+        },
+        destinatario: {
+            logradouro: '',
+            bairro: '',
+            numero: '',
+            complemento: '',
+            instrucoes: '',
+            nome: '',
+            celular: '',
+            cpfCnpj: ''
+        },
+    });
 
-  const navigate = useNavigate();
+    const handleChange = (e, section, field) => {
+        setPedido({
+            ...pedido,
+            [section]: {
+                ...pedido[section],
+                [field]: e.target.value
+            }
+        });
+    };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const pedidoId = Math.floor(Math.random() * 1000000);
+        alert(`Pedido realizado com sucesso! Número do pedido: ${pedidoId}`);
+        navigate('/pedidos_cadastrados', { state: { pedido, pedidoId } });
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    return (
+        <div>
+            <nav className="navbar">
+                <h1>Informações Adicionais</h1>
+            </nav>
+            <form className="form-container" onSubmit={handleSubmit}>
+                <h2>Informações do Remetente</h2>
+                <div className="row">
+                    <input type="text" placeholder="Logradouro" value={pedido.remetente.logradouro} onChange={(e) => handleChange(e, 'remetente', 'logradouro')} />
+                    <input type="text" placeholder="Bairro" value={pedido.remetente.bairro} onChange={(e) => handleChange(e, 'remetente', 'bairro')} />
+                </div>
+                <div className="row">
+                    <input type="text" placeholder="Número" value={pedido.remetente.numero} onChange={(e) => handleChange(e, 'remetente', 'numero')} />
+                    <input type="text" placeholder="Complemento" value={pedido.remetente.complemento} onChange={(e) => handleChange(e, 'remetente', 'complemento')} />
+                    <input type="text" placeholder="Nome do Remetente" value={pedido.remetente.nome} onChange={(e) => handleChange(e, 'remetente', 'nome')} />
+                </div>
+                <div className="row">
+                    <input type="text" placeholder="Celular" value={pedido.remetente.celular} onChange={(e) => handleChange(e, 'remetente', 'celular')} />
+                    <input type="text" placeholder="CPF ou CNPJ" value={pedido.remetente.cpfCnpj} onChange={(e) => handleChange(e, 'remetente', 'cpfCnpj')} />
+                    <input type="email" placeholder="Email" value={pedido.remetente.email} onChange={(e) => handleChange(e, 'remetente', 'email')} />
+                </div>
 
-    const pedidosExistentes = JSON.parse(localStorage.getItem("pedidos")) || [];
+                <br />
 
-    const novosPedidos = [...pedidosExistentes, formData];
-
-    localStorage.setItem("pedidos", JSON.stringify(novosPedidos));
-
-    navigate("/pedidos_cadastrados");
-  };
-
-  return (
-    <div>
-      <nav className="navbar">
-        <h1 className="navbar-title">Informações Adicionais</h1>
-      </nav>
-      <div className="container">
-        <h2>CEP</h2>
-        <form className="form-correio" onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="logradouro">Logradouro</label>
-              <input
-                type="text"
-                id="logradouro"
-                name="logradouro"
-                value={formData.logradouro}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="col">
-              <label htmlFor="bairro">Bairro</label>
-              <input
-                type="text"
-                id="bairro"
-                name="bairro"
-                value={formData.bairro}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col">
-              <label htmlFor="numero">Número</label>
-              <input
-                type="text"
-                id="numero"
-                name="numero"
-                value={formData.numero}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="col">
-              <label htmlFor="complemento">Complemento</label>
-              <input
-                type="text"
-                id="complemento"
-                name="complemento"
-                value={formData.complemento}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col">
-              <label htmlFor="nomeRemetente">Nome do Remetente</label>
-              <input
-                type="text"
-                id="nomeRemetente"
-                name="nomeRemetente"
-                value={formData.nomeRemetente}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col">
-              <label htmlFor="celular">Celular</label>
-              <input
-                type="tel"
-                id="celular"
-                name="celular"
-                value={formData.celular}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="col">
-              <label htmlFor="cpfCnpj">CPF ou CNPJ</label>
-              <input
-                type="text"
-                id="cpfCnpj"
-                name="cpfCnpj"
-                value={formData.cpfCnpj}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="col">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <button type="submit" className="btn-submit">
-            Pedir
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-}
+                <h2>Informações do Destinatário</h2>
+                <div className="row">
+                    <input type="text" placeholder="Logradouro" value={pedido.destinatario.logradouro} onChange={(e) => handleChange(e, 'destinatario', 'logradouro')} />
+                    <input type="text" placeholder="Bairro" value={pedido.destinatario.bairro} onChange={(e) => handleChange(e, 'destinatario', 'bairro')} />
+                </div>
+                <div className="row">
+                    <input type="text" placeholder="Número" value={pedido.destinatario.numero} onChange={(e) => handleChange(e, 'destinatario', 'numero')} />
+                    <input type="text" placeholder="Complemento" value={pedido.destinatario.complemento} onChange={(e) => handleChange(e, 'destinatario', 'complemento')} />
+                    <input type="text" placeholder="Instruções" value={pedido.destinatario.instrucoes} onChange={(e) => handleChange(e, 'destinatario', 'instrucoes')} />
+                </div>
+                <div className="row">
+                    <input type="text" placeholder="Nome do Destinatário" value={pedido.destinatario.nome} onChange={(e) => handleChange(e, 'destinatario', 'nome')} />
+                    <input type="text" placeholder="Celular" value={pedido.destinatario.celular} onChange={(e) => handleChange(e, 'destinatario', 'celular')} />
+                    <input type="text" placeholder="CPF ou CNPJ" value={pedido.destinatario.cpfCnpj} onChange={(e) => handleChange(e, 'destinatario', 'cpfCnpj')} />
+                </div>
+                <button type="submit">Pedir</button>
+            </form>
+        </div>
+    );
+};
 
 export default InfoAdicional;

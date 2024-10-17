@@ -1,44 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import './PedidosCadastrados.css'; 
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function PedidosCadastrados() {
-    const [pedidos, setPedidos] = useState([]);
+const PedidosCadastrados = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [pedidos, setPedidos] = useState(location.state ? [{ ...location.state.pedido, id: location.state.pedidoId }] : []);
 
-    useEffect(() => {
-        // Recuperar pedidos do localStorage
-        const pedidosArmazenados = JSON.parse(localStorage.getItem('pedidos')) || [];
-        setPedidos(pedidosArmazenados);
-    }, []);
-
-    const handleDelete = (index) => {
-        const novosPedidos = pedidos.filter((_, i) => i !== index);
-        setPedidos(novosPedidos);
-        localStorage.setItem('pedidos', JSON.stringify(novosPedidos));
+    const handleEdit = (id) => {
+        const pedido = pedidos.find(p => p.id === id);
+        navigate('/', { state: pedido });
     };
 
-    const handleEdit = (index) => {
-        const novoNome = prompt("Digite o novo nome do remetente:", pedidos[index].nomeRemetente);
-        if (novoNome) {
-            const novosPedidos = [...pedidos];
-            novosPedidos[index].nomeRemetente = novoNome;
-            setPedidos(novosPedidos);
-            localStorage.setItem('pedidos', JSON.stringify(novosPedidos));
-        }
+    const handleDelete = (id) => {
+        setPedidos(pedidos.filter(p => p.id !== id));
     };
 
     return (
         <div>
-            <h1>Pedidos Cadastrados</h1>
-            <ul>
+            <nav className="navbar">
+                <h1>Pedidos</h1>
+            </nav>
+            <div className="pedidos-container">
                 {pedidos.map((pedido, index) => (
-                    <li key={index}>
-                        {pedido.nomeRemetente} - {pedido.logradouro}, {pedido.numero}
-                        <button onClick={() => handleEdit(index)}>Editar</button>
-                        <button onClick={() => handleDelete(index)}>Excluir</button>
-                    </li>
+                    <div key={pedido.id} className="pedido-box">
+                        <h2>Pedido {pedido.id}</h2>
+                        <button className='buttonPedidos' onClick={() => handleEdit(pedido.id)}>Editar</button>
+                        <button className='buttonPedidos' onClick={() => handleDelete(pedido.id)}>Cancelar</button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
-}
+};
 
 export default PedidosCadastrados;
