@@ -3,10 +3,18 @@
         {
             "id": "1",
             "cliente":"João",
+            "cep_origem": "9841-484",
+            "cep_entrega": "5984-895",
             "motoboy":"Pedro",
-            "status":"Agendado",
-            "data_agendamento":"2024-08-29T21:00:00.000Z",
-            "data_entrega":"2024-08-29T21:00:00.000Z"
+            "contato_client":"27 998819085",
+            "peso_entrega":"7kg",
+            "distancia":"10kg",
+            "custo":"R$ 17,00",
+            "data_inicio":"18/05",
+            "hora_agendada":"10:00",
+            "data_fim":"19/08",
+            "hora_entraga": "12:00",
+            "status":"Em andamento"
         } 
     ]
 }

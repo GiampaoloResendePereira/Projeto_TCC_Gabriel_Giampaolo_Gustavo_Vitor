@@ -1,18 +1,22 @@
 import React from 'react'
 import styles from './GerenciamentoEntregas.css'
 import NavBarAdmin from '../layout/NavBarAdmin'
+import EntregasGet from '../Crude/EntregasGet'
+import FormEdit from './FormEditar/FormEdit'
+
 
 function Gerenciamento_entregas() {
+
   return (
 
     <>
       <NavBarAdmin />
-
-      <div className='LayoutEntregas'>
-        <div className='form-select'>
+      <div class='container'>
+        <div className='form'>
           <div>Filtro de pesquisa
-            <form action="">
-              <div>Status
+            <form>
+              <h6>Status</h6>
+              <div>
                 <input type="radio" id='option1' name='group1' value='Option1' />
                 <label for='option1'>Todos</label>
                 <input type="radio" id='option2' name='group1' value='Option1' />
@@ -22,30 +26,42 @@ function Gerenciamento_entregas() {
                 <input type='radio' id='option4' name='group1' value='Option1' />
                 <label for='option4'>Finalizados</label>
               </div>
+              <div>
+                <label class="form-label"> Data Inicio</label>
+                <input class="form-control" type="date" />
+                <label class="form-label"> Data Fim</label>
+                <input class="form-control" type="date" />
+                <label class="form-label">Motoboy</label>
+                <input class="form-control" type="text" />
+                <label class="form-label">Cliente</label>
+                <input class="form-control" type="text" />
+              </div>
             </form>
-            {/* <div className='date'> */}
           </div>
         </div>
-        <div>
-          <div className='container'>
-            <div className='blackTable' >
-              <table className='tituloPesquisa'>
-                <thead>
-                  <span>id</span>
-                  <span>Cliente</span>
-                  <span>Motoboy</span>
-                  <span>Status</span>
-                  <span>Data Agendada</span>
-                  <span>Data Entrega</span>
-                  <span class ="bg-light">
-                    <a class="btn btn-warning" href='/editar_entregas'>Editar</a>
-                  </span>
-                </thead>
-              </table>
-            </div>
+        <div class="form">
+          <div className={styles.blackTable}>
+            <table className='tituloPesquisa'>
+              <thead class='title'>
+                <th>Código</th>
+                <th>Cliente</th>
+                <th>Motoboy</th>
+                <th>Status</th>
+                <th>Data Agendada</th>
+                <th>Data Entrega</th>
+                <th>Ações</th>
+              </thead>
+              <div class="btnAcoes">
+                <th class="bg-light">
+                  <a class="btn btn-warning" href='/form_entregas'>Editar</a>
+                </th>
+              </div>
+            </table>
           </div>
         </div>
+        <EntregasGet/>
       </div>
+
     </>
   )
 }
