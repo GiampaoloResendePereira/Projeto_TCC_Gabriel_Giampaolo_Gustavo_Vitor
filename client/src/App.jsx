@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TelaAdministrador from './components/Administrador/TelaAdministrador';
@@ -20,10 +21,24 @@ import Notificacoes from './components/Motoboy/Notificacoes';
 import TelaMotoboy from './components/Motoboy/TelaMotoboy';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+=======
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TelaAdministrador from './pages/Administrador/TelaAdministrador';
+import GerenciamentoEntrega from './pages/Administrador/GerenciamentoEntrega';
+import EditarParametro from './pages/Administrador/EditarParametro';
+import EditarPerfis from './pages/Administrador/EditarPerfis';
+import Relatorios from './pages/Administrador/Relatorios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+>>>>>>> 58f6f24fae42ada8a8524742eb250f1a0bc407fc
 const App = () => {
   return (
     <Router>
       <Routes>
+<<<<<<< HEAD
         {/* Rotas */}
         <Route path="/" element={<TelaInicio />} />
         <Route path="/simulador-frete" element={<SimuladorFrete />} />
@@ -43,9 +58,20 @@ const App = () => {
         <Route path="/historico-motoboy" element={<HistoricoMotoboy />} />
         <Route path="/notificacoes" element={<Notificacoes />} />
         <Route path="/motoboy" element={<TelaMotoboy />} />
+=======
+        <Route path="/" element={<TelaAdministrador />} />
+        <Route path="/gerenciamento-entregas" element={<GerenciamentoEntrega />} />
+        <Route path="/editar-parametro" element={<EditarParametro />} />
+        <Route path="/editar-perfis" element={<EditarPerfis />} />
+        <Route path="/relatorios" element={<Relatorios />} />
+>>>>>>> 58f6f24fae42ada8a8524742eb250f1a0bc407fc
       </Routes>
     </Router>
   );
 };
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> 58f6f24fae42ada8a8524742eb250f1a0bc407fc

@@ -1,0 +1,13 @@
+/* src/pages/GerenciamentoEntrega.css */
+.tela-gerenciamento-entrega {
+  background-color: #808080; /* Fundo cinza */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  }
+  
+  

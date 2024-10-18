@@ -7,6 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+<<<<<<< HEAD
+=======
+    "json-server": "^1.0.0-beta.2",
+>>>>>>> 58f6f24fae42ada8a8524742eb250f1a0bc407fc
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
@@ -16,6 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+<<<<<<< HEAD
+=======
+    "backend": "json-server --watch db.json --port 5000",
+>>>>>>> 58f6f24fae42ada8a8524742eb250f1a0bc407fc
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
