@@ -3,23 +3,27 @@ import styles from './NavBarAdmin.module.css'
 
 function NavBarAdmin() {
   return (
-    <div className={styles.black}>
-      <nav className={`${styles.elemntNavbar} container`}>
-        <ul>
-          <li>Início</li>
-          <li className='navbar-brand'>Gerenciamento entregas</li>
-          <li>Relatórios</li>
-        </ul>
-        <div>
-          <ul className='navbar-nav mx-auto'>
-            <li className='nav-link' to='/relatorio'></li>
-          </ul>
+    <div className='navbar-adm'>
+      <div className={styles.red}>
+        <div className={styles.admin}>
+          <span>Administrador</span>
         </div>
-
-        {/* <span>Gerenciamento de entregas</span>
-        <span>Relatórios</span>
-        <span>Configurações</span> */}
-      </nav>
+      </div>
+      <div className={styles.black}>
+        <nav className={`${styles.elementNavbar} container`}>
+          <ul>
+            <li><a href='/dashboard_entregas'>Dashboard</a></li>
+            <li className='navbar-brand'>
+              <a href='/gerenciamento_entregas'>Gerenciamento entregas</a></li>
+            <li><a href="/relatorios">Relatórios</a></li>
+          </ul>
+          <div>
+            <ul className='navbar-nav mx-auto'>
+              <li className='nav-link' to='/relatorio'></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   )
 }
