@@ -58,7 +58,6 @@ function FormAula({ titulo, txtBtn, handleSubmit, id, tipo }) {
         <div className="container justify-content-center col-sm-12 col-md-6 col-lg-3">
             <h1 className="text-center">{titulo}</h1>
             <form onSubmit={submit}>
-
                 <label className="form-label" htmlFor="">
                     Código:
                 </label>

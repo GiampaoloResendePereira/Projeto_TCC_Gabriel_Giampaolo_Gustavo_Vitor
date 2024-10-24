@@ -6,6 +6,7 @@ import GerenciamentoEntregas from './components/pages/GerenciamentoEntregas';
 import Relatorios from './components/pages/Relatorios';
 import Home from './components/pages/Home'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Login from './components/pages/Login';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path ='/form_entregas' element={<FormEdit/>}/>
         <Route path ='/dashboard_entregas' element={<Dashboard/>}/>
         <Route path ='/relatorios' element={<Relatorios/>}/>
+        <Route path ='/login' element={<Login/>}/>
       </Routes>
     </Router>
   );
