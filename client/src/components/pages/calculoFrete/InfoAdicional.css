@@ -6,7 +6,7 @@
 }
 
 .form-container {
-    margin: 20px;
+    margin: 50px;
 }
 
 .row {
@@ -22,10 +22,22 @@ input {
 }
 
 button {
-    padding: 10px 15px;
+    display: flex;
+    padding: 10px 20px;
     font-size: 16px;
-    margin-top: 20px;
-    cursor: pointer;
-    color: white;
+    font-weight: 500;
+    color: #fff;
     background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.label {
+    display: inline-block; /* Necessário para aplicar largura e altura */
+    background-color: red; /* Cor de fundo opcional */
+    border-radius: 500px; /* Altera para o valor desejado */
+    padding: 5px 10px; /* Espaçamento interno */
+}
+

@@ -69,6 +69,7 @@ const InfoAdicional = () => {
                 <br />
 
                 <h2>Informações do Destinatário</h2>
+                <div className=''>
                 <div className="row">
                     <input type="text" placeholder="Logradouro" value={pedido.destinatario.logradouro} onChange={(e) => handleChange(e, 'destinatario', 'logradouro')} />
                     <input type="text" placeholder="Bairro" value={pedido.destinatario.bairro} onChange={(e) => handleChange(e, 'destinatario', 'bairro')} />
@@ -83,7 +84,8 @@ const InfoAdicional = () => {
                     <input type="text" placeholder="Celular" value={pedido.destinatario.celular} onChange={(e) => handleChange(e, 'destinatario', 'celular')} />
                     <input type="text" placeholder="CPF ou CNPJ" value={pedido.destinatario.cpfCnpj} onChange={(e) => handleChange(e, 'destinatario', 'cpfCnpj')} />
                 </div>
-                <button type="submit">Pedir</button>
+                </div>
+                <button type="submit" className=''>Pedir</button>
             </form>
         </div>
     );

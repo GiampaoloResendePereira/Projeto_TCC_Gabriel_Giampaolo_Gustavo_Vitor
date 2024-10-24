@@ -21,11 +21,16 @@
 }
 
 .buttonPedidos {
-    padding: 10px 15px;
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
-    background-color: white;
+    font-weight: 500;
     color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 
