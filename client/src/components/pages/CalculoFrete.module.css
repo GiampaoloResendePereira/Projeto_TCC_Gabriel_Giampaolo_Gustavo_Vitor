@@ -1,0 +1,32 @@
+
+.cepOrigem{
+    border: 1px solid black;
+    height: 90px;
+    width: 500px;
+    display: flex; /*criar layouts flexíveis em um contêines. Sendo aplicando no pai, mas afetando os elementos filhos*/
+    flex-direction:column;
+
+}
+
+.cepOrigem input {
+    height: 40px;
+    width: 170px;
+}
+
+.cepDestinatario{
+    border: 1px solid black;
+    height: 90px;
+    width: 500px;
+    display: flex; /*criar layouts flexíveis em um contêines. Sendo aplicando no pai, mas afetando os elementos filhos*/
+    flex-direction:column;
+}
+
+.cepDestinatario input{
+    height: 40px;
+    width: 170px;
+}
+
+.calculoFrete label{
+    text-align: left;
+    
+}

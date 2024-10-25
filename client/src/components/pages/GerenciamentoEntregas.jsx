@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './GerenciamentoEntregas.css'
-import NavBarAdmin from '../layout/NavBarAdmin'
 import EntregasGet from '../Crude/EntregasGet'
 import FormEdit from './FormEditar/FormEdit'
 
@@ -10,7 +9,7 @@ function Gerenciamento_entregas() {
   return (
 
     <>
-      <NavBarAdmin />
+     
       <div class='container'>
         <div className='form'>
           <div>Filtro de pesquisa
