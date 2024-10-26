@@ -20,6 +20,14 @@ import Notificacoes from './components/Motoboy/Notificacoes';
 import TelaMotoboy from './components/Motoboy/TelaMotoboy';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+//gustavo
+import CalculoFrete from './components/pages/CalculoFrete';
+import FormEdit from './components/pages/FormEditar/FormEdit';
+import GerenciamentoEntregas from './components/pages/GerenciamentoEntregas';
+import Home from './components/pages/Home'
+import LoginInicio from './components/pages/LoginInicio';
+
 const App = () => {
   return (
     <Router>
@@ -43,6 +51,12 @@ const App = () => {
         <Route path="/historico-motoboy" element={<HistoricoMotoboy />} />
         <Route path="/notificacoes" element={<Notificacoes />} />
         <Route path="/motoboy" element={<TelaMotoboy />} />
+          {/* //gustavo */}
+        <Route path ='/' element={<Home/>}/>
+        <Route path ='/gerenciamento_entregas' element={<GerenciamentoEntregas/>}/>
+        <Route path ='/calculo_frete' element={<CalculoFrete/>}/>
+        <Route path ='/form_entregas' element={<FormEdit/>}/>
+        <Route path ='/login_inicio' element={<LoginInicio/>}/>
       </Routes>
     </Router>
   );

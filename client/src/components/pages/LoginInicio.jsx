@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Login.module.css';
 
-function Login() {
+function LoginInicio() {
   return (
     <div className={styles.body}>
       <div className='boxBlack'></div>
@@ -31,4 +31,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default  LoginInicio;
