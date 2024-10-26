@@ -1,8 +1,9 @@
+// src/pages/Relatorio.jsx
 import React, { useState } from 'react';
-import jsPDF from 'jspdf';
-import './Relatorio.css'; // Importe o arquivo de estilos
+import { jsPDF } from 'jspdf';
+import '../../styles/global.css'; // Importa o CSS para aplicar o estilo
 
-const Relatorio = () => {
+function Relatorio() {
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [data, setData] = useState('');
@@ -11,19 +12,22 @@ const Relatorio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
+    if (!titulo || !descricao || !data) {
+      setFeedback('Por favor, preencha todos os campos.');
+      return;
+    }
+
     if (formato === 'pdf') {
       gerarPDF();
     } else if (formato === 'text') {
       gerarTexto();
     }
-    
+
     setFeedback('Relatório salvo na área de trabalho com sucesso!');
-    
+
     // Limpar campos do formulário
-    setTitulo('');
-    setDescricao('');
-    setData('');
+    resetForm();
   };
 
   const gerarPDF = () => {
@@ -43,9 +47,17 @@ const Relatorio = () => {
     link.click();
   };
 
+  const resetForm = () => {
+    setTitulo('');
+    setDescricao('');
+    setData('');
+    setFormato('pdf'); // Resetar para o formato padrão
+    setFeedback(''); // Limpa feedback após o envio
+  };
+
   return (
     <div className="container mt-5">
-      <h2>Enviar Relatório</h2>
+      <h4 className= "estilo" style={{ color: 'white' }}>Enviar Relatório</h4>
       {feedback && <div className="alert alert-success" role="alert">{feedback}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -93,10 +105,10 @@ const Relatorio = () => {
             <option value="text">Texto</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">Salvar Relatório</button>
+        <button type="submit" className="btn btn-danger">Salvar Relatório</button>
       </form>
     </div>
   );
-};
+}
 
 export default Relatorio;

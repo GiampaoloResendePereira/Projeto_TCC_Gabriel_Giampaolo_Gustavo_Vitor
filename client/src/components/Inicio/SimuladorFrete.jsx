@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SimuladorFrete.css'; // Certifique-se de importar o CSS
+import '../../styles/global.css';
 
 const SimuladorFrete = () => {
   const [cepOrigem, setCepOrigem] = useState('');
@@ -46,7 +46,7 @@ const SimuladorFrete = () => {
 
   return (
     <div className="container mt-5 simulador-container"> {/* Adiciona a classe para o fundo cinza */}
-      <h2 className="simulador-title">Simulador de Frete</h2> {/* Adiciona a classe ao h2 */}
+      <h4 className= "estilo" style={{ color: 'white' }}>Simulador de Frete</h4> {/* Adiciona a classe ao h2 */}
       <div className="mb-3">
         <label>CEP de Origem:</label>
         <input
@@ -80,7 +80,7 @@ const SimuladorFrete = () => {
         />
       </div>
 
-      <button className="btn btn-primary" onClick={calcularFrete}>Calcular Frete</button>
+      <button className="btn btn-danger" onClick={calcularFrete}>Calcular Frete</button>
 
       {valorFrete !== null && (
         <div className="mt-4">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './CadastroMotoboy.css';
+import '../../styles/global.css';
 
 const CadastroMotoboy = ({ motoboyId }) => {
   const [motoboyData, setMotoboyData] = useState({
