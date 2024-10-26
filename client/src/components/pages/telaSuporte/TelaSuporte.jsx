@@ -1,6 +1,7 @@
 import React from 'react';
 import './Suporte.css';
 import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
+import suporte from '../../../assets/icon/suporte.png';
 
 const TelaSuporte = () => {
     const navigate = useNavigate(); // Hook para navegação
@@ -17,10 +18,9 @@ const TelaSuporte = () => {
 
             <div className="container">
                 {/* Área para a imagem */}
-                <div
-                    className="support-image"
-                    style={{ backgroundImage: `url('URL_DA_IMAGEM_AQUI')` }}
-                ></div>
+                <div className="support-image">
+                    <img src="suporte" alt="suporte" />
+                </div>
 
                 {/* Campo para resumir o problema */}
                 <input type="text" placeholder="Resuma o problema em uma palavra" required />

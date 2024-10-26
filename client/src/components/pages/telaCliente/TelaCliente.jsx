@@ -6,12 +6,9 @@ import '../../global.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import GerenciamentoEntrega from '../administrador/GerenciamentoEntrega';
-import EditarParametro from '../administrador/EditarParametro'; 
-import EditarCadastroMotoboy from '../administrador/EditarCadastroMotoboy';
-import EditarCadastroCliente from '../administrador/EditarCadastroCliente';
-import Relatorios from '../administrador/Relatorios';
-import NotificacoesAdmin from '../administrador/NotificacoesAdmin';
+import TelaSuporte from '../telaSuporte/TelaSuporte';
+import PedidosCadastrados from '../PedidosCadastrados/PedidosCadastrados';
+import InfoAdicional from '../calculoFrete/InfoAdicional';
 
 const TelaCliente = () => {
   // Estado para controlar a tela visível
@@ -20,20 +17,14 @@ const TelaCliente = () => {
   // Função para renderizar a tela ativa
   const renderTelaAtiva = () => {
     switch (telaAtiva) {
-      case 'gerenciamento-entregas':
-        return <GerenciamentoEntrega />;
-      case 'editar-parametro':
-        return <EditarParametro />;
-      case 'relatorios':
-        return <Relatorios />;
-      case 'notificacoes-admin':
-        return <NotificacoesAdmin />;
-      case 'editar-cadastro-cliente':
-        return <EditarCadastroCliente />;
-      case 'editar-cadastro-motoboy':
-        return <EditarCadastroMotoboy />;
+      case 'pedidos_cadastrados':
+        return <PedidosCadastrados />;
+      case 'cadastro_produtos':
+        return <InfoAdicional />;
+      case 'tela_suporte':
+        return <TelaSuporte />;
       default:
-        return <GerenciamentoEntrega />; // Padrão é Gerenciamento de Entregas
+        return <PedidosCadastrados />; // Padrão é Gerenciamento de Entregas
     }
   };
 
@@ -50,16 +41,13 @@ const TelaCliente = () => {
             </Link>
             <Nav className="me-auto">
               {/* Links de navegação com onClick para alterar o estado */}
-              <Nav.Link onClick={() => setTelaAtiva('gerenciamento-entregas')}>
-                Gerenciamento de Entregas
+              <Nav.Link onClick={() => setTelaAtiva('pedidos_cadastrados')}>
+                Pedidos
               </Nav.Link>
-              <Nav.Link onClick={() => setTelaAtiva('editar-parametro')}>
-                Editar Parâmetro de Cálculo de Frete
+              <Nav.Link onClick={() => setTelaAtiva('cadastro_produtos')}>
+                Calcular frete
               </Nav.Link>
-              <Nav.Link onClick={() => setTelaAtiva('relatorios')}>Relatórios</Nav.Link>
-              <Nav.Link onClick={() => setTelaAtiva('notificacoes-admin')}>
-                Notificações
-              </Nav.Link>
+              <Nav.Link onClick={() => setTelaAtiva('tela_suporte')}>Suporte</Nav.Link>
 
               {/* Dropdown para Editar Cadastro */}
               <li className="nav-item dropdown">
