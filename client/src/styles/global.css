@@ -275,47 +275,79 @@ table tr:hover {
   }
 }
 
-/* src/components/CarrosselPromocoes.css */
+/* =======================
+  carrosseul
+======================= */
 .carousel-img {
   height: 400px; /* Defina a altura desejada */
   object-fit: cover; /* Faz com que a imagem se ajuste ao espaço disponível */
   padding: 30px;
 }
 
+/* =======================
+  Tela login
+======================= */
 .login-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* Exemplo de cor de fundo */
+  padding: 20px;
   
 }
 
 .button-group {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Espaço entre os botões */
+  gap: 20px;
 }
 
 .login-option {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 150px;
 }
 
 .login-icon {
   
-  height: px; /* Aumenta o tamanho da imagem */
+  width: 200px; /* ajuste o tamanho da imagem */
+  padding: 20px;
+  height: auto;
   margin-bottom: 10px;
 }
 
 .login-button {
-  padding: 12px 24px; /* Aumenta o espaçamento do botão */
-  font-size: 18px; /* Aumenta o tamanho da fonte */
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #ff0000; /* cor de fundo do botão */
+  color: #ffffff; /* cor do texto do botão */
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border: none; /* Remove a borda padrão */
-  border-radius: 5px; /* Arredonda os cantos do botão */
-  background-color: #007bff; /* Adiciona uma cor de fundo */
-  color: white; /* Define a cor do texto */
-  transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+  transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  background-color: #ff5050; /* cor ao passar o mouse */
+}
+
+.sair-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #ffffff; /* cor de fundo do botão */
+  color: #000000; /* cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sair-button:hover {
+  background-color: #ffffff; /* cor ao passar o mouse */
 }

@@ -11,15 +11,15 @@ const Login = () => {
 
   // Funções de navegação para cada tela
   const handleAdminLogin = () => {
-    navigate("/administrador"); // Redireciona para a tela do Administrador
+    navigate("/login-usuario"); // Redireciona para a tela do Administrador
   };
 
   const handleClientLogin = () => {
-    navigate("/cliente"); // Redireciona para a tela do Cliente
+    navigate("/login-usuario"); // Redireciona para a tela do Cliente
   };
 
   const handleMotoboyLogin = () => {
-    navigate("/motoboy"); // Redireciona para a tela do Motoboy
+    navigate("/login-usuario"); // Redireciona para a tela do Motoboy
   };
 
   return (

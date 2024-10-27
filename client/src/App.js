@@ -10,7 +10,8 @@ import NotificacoesAdmin from './components/Administrador/NotificacoesAdmin';
 import TelaInicio from './components/Inicio/TelaInicio';
 import SimuladorFrete from './components/Inicio/SimuladorFrete';
 import Login from './components/Inicio/Login';
-import CadastroMotoboy from './components/Inicio/CadastroMotoboy';
+import LoginUsuario from './components/Inicio/LoginUsuario';
+import CadastroMotoboy from './components/Administrador/CadastroMotoboy';
 import CadastroCliente from './components/Inicio/CadastroCliente';
 import Acompanhamento from './components/Cliente/Acompanhamento';
 import HistoricoCliente from './components/Cliente/HistoricoCliente';
@@ -35,6 +36,7 @@ function App() {
         <Route path="/simulador-frete" element={<SimuladorFrete />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastrar-cliente" element={<CadastroCliente />} />
+        <Route path="/login-usuario" element={<LoginUsuario />} />
         <Route path="/cadastrar-motoboy" element={<CadastroMotoboy />} />       
         <Route path="/Acompanhamento" element={<Acompanhamento />} />
         <Route path="/historico-cliente" element={<HistoricoCliente />} />
