@@ -2,7 +2,7 @@
 
 import logo from '../../assets/img/logo.png';
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../styles/global.css';
 import CarrosselPromocoes from './CarrosselPromocoes';
@@ -23,12 +23,9 @@ const TelaInicio = () => {
           </Link>
           <Nav className="me-auto">
             <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/cadastrar-cliente">Cadastrar</Nav.Link>
 
-            {/* Menu suspenso "Dropdown" */}
-            <NavDropdown title="Cadastrar" id="nav-dropdown-dark-example" menuVariant="dark">
-              <NavDropdown.Item href="/cadastrar-cliente">Cadastrar Cliente</NavDropdown.Item>
-              <NavDropdown.Item href="/cadastrar-motoboy">Cadastrar Motoboy</NavDropdown.Item>
-            </NavDropdown>
+            
           </Nav>
         </Container>
       </Navbar>

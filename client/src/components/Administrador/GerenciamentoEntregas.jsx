@@ -95,9 +95,7 @@ function Gerenciamento() {
             <td>20/10/2024</td>
             <td>—</td>
             <td>
-              <Button variant="danger" className="me-2">Editar</Button>
-              <Button variant="danger" className="me-2">Cancelar</Button>
-              <Button variant="danger">Concluir</Button>
+              <Button variant="danger" className="me-2">Detalhes</Button>
             </td>
           </tr>
           <tr>
@@ -108,9 +106,7 @@ function Gerenciamento() {
             <td>19/10/2024</td>
             <td>—</td>
             <td>
-              <Button variant="danger" className="me-2">Editar</Button>
-              <Button variant="danger" className="me-2">Cancelar</Button>
-              <Button variant="danger">Concluir</Button>
+              <Button variant="danger" className="me-2">Detalhes</Button>
             </td>
           </tr>
           {/* Continue com mais dados */}

@@ -16,7 +16,7 @@ import Acompanhamento from './components/Cliente/Acompanhamento';
 import HistoricoCliente from './components/Cliente/HistoricoCliente';
 import SolicitacaoTransporte from './components/Cliente/SolicitacaoTransporte';
 import TelaCliente from './components/Cliente/TelaCliente';
-import AceitaCorrridas from './components/Motoboy/AceitaCorridas';
+import AceitaCorridas from './components/Motoboy/AceitaCorridas';
 import HistoricoMotoboy from './components/Motoboy/HistoricoMotoboy';
 import NotificacoesMotoboy from './components/Motoboy/NotificacoesMotoboy';
 import TelaMotoboy from './components/Motoboy/TelaMotoboy';
@@ -47,7 +47,7 @@ function App() {
         <Route path="/editar-cadastro-cliente" element={<EditarCadastroCliente />} />
         <Route path="/relatorios" element={<Relatorios />} />
         <Route path="/notificacoes-admin" element={<NotificacoesAdmin />} />
-        <Route path="/aceita-corridas" element={<AceitaCorrridas />} />
+        <Route path="/aceita-corridas" element={<AceitaCorridas />} />
         <Route path="/historico-motoboy" element={<HistoricoMotoboy />} />
         <Route path="/notificacoes-motoboy" element={<NotificacoesMotoboy />} />
         <Route path="/motoboy" element={<TelaMotoboy />} />
