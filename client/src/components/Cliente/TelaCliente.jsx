@@ -30,6 +30,7 @@ const TelaCliente = () => {
           <Nav className="me-auto">
             <Nav.Link href="/solicitacao-transporte">Solicitação de Frete</Nav.Link>
             <Nav.Link href="/Acompanhamento">Acompanhamento do frete</Nav.Link>
+            <Nav.Link href="/tela_suporte">Suporte</Nav.Link>
             
             <div className="align-right">
           <button className="sair-button" onClick={handleAdminLogin}>

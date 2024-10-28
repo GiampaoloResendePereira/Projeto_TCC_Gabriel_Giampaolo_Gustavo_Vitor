@@ -32,6 +32,9 @@ import GerenciamentoEntregas from './components/pages/GerenciamentoEntregas';
 import Home from './components/pages/Home'
 import LoginInicio from './components/pages/LoginInicio';
 
+//Vitor
+import TelaSuporte from './components/Cliente/TelaSuporte';
+
 const App = () => {
   return (
     <Router>
@@ -64,6 +67,8 @@ const App = () => {
         <Route path ='/calculo_frete' element={<CalculoFrete/>}/>
         <Route path ='/form_entregas' element={<FormEdit/>}/>
         <Route path ='/login_inicio' element={<LoginInicio/>}/>
+        {/*Vitor*/}
+        <Route path ='/tela_suporte' element={<TelaSuporte/>}/> 
       </Routes>
     </Router>
   );

@@ -1,0 +1,77 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar */
+
+
+.navbar h1 {
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+/* Setinha de Voltar */
+.back-arrow {
+    width: 10%;
+    position: absolute;
+    left: 0px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    background-color:  #343a40;;
+}
+
+/* Conteúdo */
+.container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Imagem */
+.support-image {
+    width: 50%;
+    max-width: 50px;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Campos de Texto */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botão de Envio */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: #343a40;
+    padding: 15px 20px;
+  }
+
