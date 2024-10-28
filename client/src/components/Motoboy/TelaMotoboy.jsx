@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; // Importa o hook para navegação
+import AceitaCorridas from './AceitaCorridas';
+import '../../styles/Motoboy.css';
 
 function TelaMotoboy() {
   const navigate = useNavigate(); // Hook para navegação entre as rotas
@@ -24,7 +26,7 @@ function TelaMotoboy() {
           </Link>
           <Nav className="me-auto">
            
-          <div className="align-right">
+          <div className="ms-auto">
           <button className="sair-button" onClick={handleAdminLogin}>
             Sair
           </button>
@@ -33,7 +35,7 @@ function TelaMotoboy() {
         </Container>
       </Navbar>
 
-      
+      <AceitaCorridas/>
       
     </div>
   );
