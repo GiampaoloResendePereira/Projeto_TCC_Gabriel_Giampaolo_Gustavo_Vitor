@@ -3,6 +3,7 @@ import styles from './GerenciamentoEntregas.css'
 import EntregasGet from '../Crude/EntregasGet'
 import FormEdit from './FormEditar/FormEdit'
 import NavBarClient from '../layout/NavBarClient'
+import TelaAdministrador from '../Administrador/TelaAdministrador'
 
 
 
@@ -12,6 +13,8 @@ function Gerenciamento_entregas() {
   return (
 
     <>
+
+    <TelaAdministrador/>
      <NavBarClient/>
       <div class='container'>
         <div className='form'>
