@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './GerenciamentoEntregas.css'
 import EntregasGet from '../Crude/EntregasGet'
 import FormEdit from './FormEditar/FormEdit'
-import NavBarNavigation from '../layout/NavBar'
+import NavBarNavigation from '../layout/NavBarAdmin'
 
 
 

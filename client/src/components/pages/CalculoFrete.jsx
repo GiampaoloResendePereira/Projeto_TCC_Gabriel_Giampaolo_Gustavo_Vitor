@@ -1,16 +1,14 @@
 import React from 'react'
 import NavBarClient from '../layout/NavBarClient'
 import styles from '../pages/CalculoFrete.module.css'
-import TelaAdministrador from '../Administrador/TelaAdministrador'
-import NavBarNavigation from '../layout/NavBar'
+import NavBarNavigation from '../layout/NavBarAdmin'
 
 function CalculoFrete() {
   return (
     <>
-    <NavBarNavigation/>
-      <NavBarClient />
-      <div className={styles.frete} >
-      <form action="">
+      <div className=''>
+      <div className={styles.calculo}>
+      <form  className = {styles.frete} action="">
         <div className={`${styles.calculoFrete}`}>
           <div className={`${styles.cepOrigem}`}>
             <label  htmlFor="">Digite o CEP de origem</label>
@@ -42,6 +40,7 @@ function CalculoFrete() {
             <button type="submit" class="btn btn-outline-danger">CALCULAR</button>
           </div>
         </form>
+        </div>
       </div>
     </>
 

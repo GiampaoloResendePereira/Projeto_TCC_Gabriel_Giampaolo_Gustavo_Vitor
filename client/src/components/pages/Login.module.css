@@ -24,7 +24,7 @@
 
 }
 
-form{
+.formLogin{
     width: 400px;  /*laargura do elemento*/
     height: 300px; /*altura do elemento*/ 
     margin: 100px auto;

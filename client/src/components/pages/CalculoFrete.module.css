@@ -29,7 +29,21 @@
 .calculoFrete label{
     text-align: left;
     
+    
 }
+.calculoFrete{
+    justify-content: flex-start;
+    padding-left: 20px;
+    height: 250px;
+}
+
 .frete{
-    height: 400px;
+    justify-content: flex-start;
+    padding-left: 90px;
 }
+.calculo{
+    width: 900px;
+}
+
+
+

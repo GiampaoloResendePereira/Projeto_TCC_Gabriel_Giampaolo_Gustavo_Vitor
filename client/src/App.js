@@ -61,7 +61,6 @@ const App = () => {
           {/* //gustavo */}
         <Route path ='/' element={<Home/>}/>
         <Route path ='/gerenciamento_entregas' element={<GerenciamentoEntregas/>}/>
-        <Route path ='/calculo_frete' element={<CalculoFrete/>}/>
         <Route path ='/form_entregas' element={<FormEdit/>}/>
         <Route path ='/login_inicio' element={<LoginInicio/>}/>
       </Routes>

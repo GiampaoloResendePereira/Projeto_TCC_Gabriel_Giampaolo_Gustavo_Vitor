@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import '../../styles/global.css';
 import CarrosselPromocoes from './CarrosselPromocoes';
 import SimuladorFrete from './SimuladorFrete';
+import CalculoFrete from '../pages/CalculoFrete';
+
 
 
 const TelaInicio = () => {
@@ -14,7 +16,6 @@ const TelaInicio = () => {
     <div>
       {/* Barra superior de navegação */}
       <Navbar bg="danger" variant="dark"></Navbar>
-
       {/* Barra de navegação principal */}
       <Navbar bg="dark" variant="dark">
         <Container>
@@ -24,14 +25,12 @@ const TelaInicio = () => {
           <Nav className="me-auto">
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/cadastrar-cliente">Cadastrar</Nav.Link>
-
-            
           </Nav>
         </Container>
       </Navbar>
-
-      <SimuladorFrete/>
       <CarrosselPromocoes />
+      <CalculoFrete />
+
     </div>
   );
 };

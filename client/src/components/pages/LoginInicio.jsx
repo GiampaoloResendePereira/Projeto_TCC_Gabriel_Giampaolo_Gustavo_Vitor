@@ -7,7 +7,7 @@ function LoginInicio() {
       <div className='boxBlack'></div>
       <div className={styles.black}>
         <div className={`${styles.boxLogin} container`}>
-          <form action="">
+          <form className={`${styles.formLogin}`} action="">
             <div>
               <h4>Login</h4>
               <label htmlFor="">Nome:</label>
