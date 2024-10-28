@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form, Alert } from "react-bootstrap";
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/global.css';
 
-const CadastroMotoboy = () => {
-  // Estados para armazenar os valores dos campos de entrada
+function CadastroMotoboy({ titulo, txtBtn, handleSubmit, id, tipo }) {
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [placa, setPlaca] = useState("");
@@ -12,43 +12,49 @@ const CadastroMotoboy = () => {
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [foto, setFoto] = useState(null);
-  const [fotoPreview, setFotoPreview] = useState(null); // Pré-visualização da foto
+  const [fotoPreview, setFotoPreview] = useState(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const navigate = useNavigate();
 
-  // Função para tratar o envio do formulário
-  const handleSubmit = (event) => {
+  // Validações de campos e envio do formulário
+  const submit = async (event) => {
     event.preventDefault();
-
-    // Validações simples
+    
     if (!nome || !cpf || !placa || !telefone || !dataNascimento || !senha || !confirmarSenha || !foto) {
       alert("Por favor, preencha todos os campos e adicione uma foto.");
       return;
     }
-
-    // Verificar se as senhas coincidem
+    
     if (senha !== confirmarSenha) {
       alert("As senhas não coincidem.");
       return;
     }
 
-    // Exibe uma mensagem de sucesso e limpa os campos
-    setShowSuccess(true);
-    setNome("");
-    setCpf("");
-    setPlaca("");
-    setTelefone("");
-    setDataNascimento("");
-    setSenha("");
-    setConfirmarSenha("");
-    setFoto(null);
-    setFotoPreview(null);
+    const infoCadastro = {
+      nome,
+      cpf,
+      telefone,
+      placa,
+      foto,
+      senha,
+      dataNascimento,
+    };
+
+    try {
+      await handleSubmit(infoCadastro, id);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
+      navigate(`/cadastro-motoboy/${tipo}`);
+    } catch (error) {
+      console.debug('Erro ao cadastrar motoboy', error);
+      alert("Erro ao realizar cadastro. Tente novamente.");
+    }
   };
 
   // Função para lidar com o upload da foto e pré-visualização
   const handleFotoChange = (event) => {
     const file = event.target.files[0];
     setFoto(file);
-
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -59,8 +65,10 @@ const CadastroMotoboy = () => {
   };
 
   return (
-    <div className="container">
-      <h4 className="estilo" style={{ color: 'white' }}>Cadastro do Motoboy</h4>
+    
+    <div className="container mt-5">
+    
+      <h4 className="estilo" style={{ color: 'white' }}>{titulo || "Cadastro do Motoboy"}</h4>
       
       {showSuccess && (
         <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible>
@@ -68,7 +76,7 @@ const CadastroMotoboy = () => {
         </Alert>
       )}
       
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={submit}>
         <Form.Group controlId="nome">
           <Form.Label>Nome:</Form.Label>
           <Form.Control
@@ -76,6 +84,7 @@ const CadastroMotoboy = () => {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             placeholder="Digite o nome completo"
+            required
           />
         </Form.Group>
 
@@ -87,6 +96,7 @@ const CadastroMotoboy = () => {
             onChange={(e) => setCpf(e.target.value)}
             placeholder="Digite o CPF"
             maxLength="11"
+            required
           />
         </Form.Group>
 
@@ -98,6 +108,7 @@ const CadastroMotoboy = () => {
             onChange={(e) => setPlaca(e.target.value)}
             placeholder="Digite a placa da moto"
             maxLength="7"
+            required
           />
         </Form.Group>
 
@@ -108,6 +119,7 @@ const CadastroMotoboy = () => {
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
             placeholder="Digite o telefone"
+            required
           />
         </Form.Group>
 
@@ -117,6 +129,7 @@ const CadastroMotoboy = () => {
             type="date"
             value={dataNascimento}
             onChange={(e) => setDataNascimento(e.target.value)}
+            required
           />
         </Form.Group>
 
@@ -127,6 +140,7 @@ const CadastroMotoboy = () => {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             placeholder="Digite a senha"
+            required
           />
         </Form.Group>
 
@@ -137,6 +151,7 @@ const CadastroMotoboy = () => {
             value={confirmarSenha}
             onChange={(e) => setConfirmarSenha(e.target.value)}
             placeholder="Confirme a senha"
+            required
           />
         </Form.Group>
 
@@ -146,6 +161,7 @@ const CadastroMotoboy = () => {
             type="file"
             accept="image/*"
             onChange={handleFotoChange}
+            required
           />
           {fotoPreview && (
             <div className="mt-3">
@@ -154,13 +170,19 @@ const CadastroMotoboy = () => {
             </div>
           )}
         </Form.Group>
-
-        <Button variant="danger" type="submit" className="mt-4">
-          Cadastrar
+        
+        <Button variant="danger" type="submit" className="mt-4 me-2">
+          {txtBtn || "Cadastrar"}
         </Button>
+
+      
+        <Link className="btn btn-danger mt-4 ms-2" to="/administrador">
+          {txtBtn || "Cancelar"}
+        </Link>
       </Form>
+      <br />
     </div>
   );
-};
+}
 
 export default CadastroMotoboy;

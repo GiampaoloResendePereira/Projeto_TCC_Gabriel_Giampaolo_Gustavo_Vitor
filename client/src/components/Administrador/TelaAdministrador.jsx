@@ -30,7 +30,7 @@ const TelaAdministrador = () => {
           </Link>
           <Nav className="me-auto">
             <Nav.Link href="/editar-parametro">Editar Parametro de Frete</Nav.Link>
-            <Nav.Link href="/cadastrar-motoboy">cadastrar Motoboy</Nav.Link>
+            <Nav.Link href="/cadastrar-motoboy">Cadastrar Motoboy</Nav.Link>
 
             <div className="align-right">
           <button className="sair-button" onClick={handleAdminLogin}>

@@ -91,6 +91,7 @@ function EditarCadastroCliente() {
 
   return (
     <div className="container mt-5">
+      <br />
       <h4 className= "estilo" style={{ color: 'white' }}>Editar Cadastro de Cliente</h4>
 
       {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
@@ -197,6 +198,7 @@ function EditarCadastroCliente() {
           </Button>
         </div>
       </Form>
+      <br />
     </div>
   );
 }
