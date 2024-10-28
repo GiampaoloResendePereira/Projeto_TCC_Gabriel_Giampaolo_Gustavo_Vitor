@@ -1,10 +1,13 @@
 import React from 'react'
 import NavBarClient from '../layout/NavBarClient'
 import styles from '../pages/CalculoFrete.module.css'
+import TelaAdministrador from '../Administrador/TelaAdministrador'
+import NavBarNavigation from '../layout/NavBar'
 
 function CalculoFrete() {
   return (
     <>
+    <NavBarNavigation/>
       <NavBarClient />
       <div className={styles.frete} >
       <form action="">
