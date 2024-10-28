@@ -6,7 +6,7 @@ function CalculoFrete() {
   return (
     <>
       <NavBarClient />
-      <div className='frete'>
+      <div className={styles.frete} >
       <form action="">
         <div className={`${styles.calculoFrete}`}>
           <div className={`${styles.cepOrigem}`}>

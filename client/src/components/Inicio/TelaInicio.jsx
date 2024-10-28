@@ -1,54 +1,37 @@
 // src/components/TelaInicio.jsx
+
+import logo from '../../assets/img/logo.png';
 import React from 'react';
-import './TelaInicio.css'; // Importa o CSS para aplicar o estilo
-import logo from '../../assets/img/logo.png'; // Caminho ajustado para a logo
-import CarrosselPromocoes from './CarrosselPromocoes'; // Importa o componente do carrossel
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import '../../styles/global.css';
+import CarrosselPromocoes from './CarrosselPromocoes';
+import SimuladorFrete from './SimuladorFrete';
+
 
 const TelaInicio = () => {
   return (
-    <div className='inicio-container'>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div className="container-fluid">
-          {/* Logo à esquerda */}
-          <a className="navbar-brand" href="/">
+    <div>
+      {/* Barra superior de navegação */}
+      <Navbar bg="danger" variant="dark"></Navbar>
+
+      {/* Barra de navegação principal */}
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" height="50" />
-          </a>
+          </Link>
+          <Nav className="me-auto">
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/cadastrar-cliente">Cadastrar</Nav.Link>
 
-          {/* Botão para mobile */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+            
+          </Nav>
+        </Container>
+      </Navbar>
 
-          {/* Links de navegação */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto"> {/* Alinha os itens à direita */}
-              <li className="nav-item">
-                <a className="nav-link" href="simulador-frete">Simulador de Frete</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/login">Login</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/cadastrar-motoboy">Cadastrar</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
-      {/* Carrossel de Promoções */}
-      <div className="carrossel-container mt-5 pt-4">
-        <CarrosselPromocoes />
-      </div>
+      <SimuladorFrete/>
+      <CarrosselPromocoes />
     </div>
   );
 };

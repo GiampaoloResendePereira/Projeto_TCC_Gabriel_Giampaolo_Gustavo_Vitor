@@ -1,50 +1,42 @@
-// src/pages/Administrador/TelaAdministrador.jsx
-import React from 'react';
-import './TelaMotoboy.css'; // Importa o CSS para aplicar o estilo
-import logo from '../../assets/img/logo.png'; // Caminho ajustado para a logo
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import logo from '../../assets/img/logo.png';
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"; // Importa o hook para navegação
 
-const TelaMotoboy = () => {
+function TelaMotoboy() {
+  const navigate = useNavigate(); // Hook para navegação entre as rotas
+
+  // Funções de navegação para cada tela
+  const handleAdminLogin = () => {
+    navigate("/"); // Redireciona para a tela do Administrador
+  };
+
   return (
-    <div className="cliente-container">
-      {/* Navbar com Bootstrap */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div className="container-fluid">
-          {/* Logo à esquerda */}
-          <a className="navbar-brand" href="/">
+    <div>
+      <Navbar bg="danger" variant="dark"></Navbar>
+
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" height="50" />
-          </a>
-
-          {/* Botão para mobile */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
+          </Link>
+          <Nav className="me-auto">
+           
+          <div className="align-right">
+          <button className="sair-button" onClick={handleAdminLogin}>
+            Sair
           </button>
-
-          {/* Links de navegação */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto"> {/* Alinha os itens à direita */}
-              <li className="nav-item">
-                <a className="nav-link" href="/gerenciamento-entregas">Aceita Corridas</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/editar-parametro">Notificações</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/editar-cadastro-motoboy">Historico de Entregas</a>
-                </li>
-            </ul>
-          </div>
         </div>
-      </nav>
+          </Nav>
+        </Container>
+      </Navbar>
+
+      
+      
     </div>
   );
-};
+}
 
 export default TelaMotoboy;

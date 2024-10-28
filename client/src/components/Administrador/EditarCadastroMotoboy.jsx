@@ -1,207 +1,201 @@
-import React, {  useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './EditarCadastroMotoboy.css';
-import motoboyData from '../../data/motoboy.json'; // Importando o JSON
+// Importações de módulos e estilos
+import { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
+import '../../styles/global.css';
 
-const EditarCadastroMotoboy = () => {
-  const [motoboy, setMotoboy] = useState({
-    nome: '',
-    email: '',
-    telefone: '',
-    cpf: '',
-    modeloMoto: '',
-    placaMoto: '',
-    anoMoto: '',
-  });
+function EditarCadastroMotoboy() {
+  // Gerenciamento de estado para os campos do formulário
+  const [nome, setNome] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
+  const [placaMoto, setPlacaMoto] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [filtroCpf, setFiltroCpf] = useState('');
+  const [filtroPlaca, setFiltroPlaca] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
-  const [searchTerm, setSearchTerm] = useState('');
-
-  // Função para buscar os dados do motoboy pelo nome ou CPF
-  const fetchMotoboyData = () => {
-    const motoboyFound = motoboyData.find(m => 
-      m.nome.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      m.cpf === searchTerm
-    );
-
-    if (motoboyFound) {
-      setMotoboy(motoboyFound);
-    } else {
-      console.error("Motoboy não encontrado");
-      setMotoboy({
-        nome: '',
-        email: '',
-        telefone: '',
-        cpf: '',
-        modeloMoto: '',
-        placaMoto: '',
-        anoMoto: '',
-      });
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setMotoboy({
-      ...motoboy,
-      [name]: value,
-    });
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
+  // Função de envio do formulário
+  const handleSubmit = (e) => {
     e.preventDefault();
-    fetchMotoboyData();
+    // Lógica de edição do cadastro
+    console.log('Cadastro enviado', { nome, cpf, email, telefone, dataNascimento, placaMoto, senha });
+    setShowAlert(true);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // Função de pesquisa por CPF e Placa de Moto
+  const handleSearch = () => {
+    console.log('Buscando motoboy por CPF e/ou Placa de Moto', { filtroCpf, filtroPlaca });
+  };
 
-    // Lógica para enviar os dados para o backend
-    console.log("Dados do motoboy:", motoboy);
-
-    try {
-      const response = await fetch(`updateMotoboy/${motoboy.cpf}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(motoboy),
-      });
-
-      if (response.ok) {
-        alert("Dados do motoboy atualizados com sucesso!");
-      } else {
-        const errorData = await response.json();
-        console.error("Erro ao atualizar os dados do motoboy:", errorData);
-        alert("Erro ao atualizar os dados do motoboy.");
-      }
-    } catch (error) {
-      console.error("Erro ao atualizar dados:", error);
-      alert("Erro ao atualizar os dados do motoboy.");
-    }
+  // Função de deletar cadastro
+  const handleDelete = () => {
+    console.log('Deletando cadastro de motoboy com CPF:', cpf);
+    // Lógica de deletar o motoboy do sistema
   };
 
   return (
     <div className="container mt-5">
-      <h2>Editar Motoboy</h2>
-      <form onSubmit={handleSearchSubmit} className="mb-4">
-        <div className="mb-3">
-          <label htmlFor="search" className="form-label">Pesquisar por Nome ou CPF</label>
-          <input
-            type="text"
-            className="form-control"
-            id="search"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Buscar</button>
-      </form>
-      
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="nome" className="form-label">Nome</label>
-          <input
-            type="text"
-            className="form-control"
-            id="nome"
-            name="nome"
-            value={motoboy.nome}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <h4 className= "estilo" style={{ color: 'white' }}>Editar Cadastro de Motoboy</h4>
 
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email</label>
-          <input
+      {/* Alerta de sucesso */}
+      {showAlert && (
+        <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
+          Cadastro atualizado com sucesso!
+        </Alert>
+      )}
+
+      {/* Campos de filtro para pesquisa */}
+      <Form.Group controlId="filtroCpf" className="mb-3">
+        <Form.Label>Pesquisar por CPF:</Form.Label>
+        <Form.Control
+          type="text"
+          value={filtroCpf}
+          onChange={(e) => setFiltroCpf(e.target.value)}
+          placeholder="Digite o CPF"
+          maxLength="11"
+          aria-label="Filtro de CPF"
+        />
+      </Form.Group>
+
+      <Form.Group controlId="filtroPlaca" className="mb-3">
+        <Form.Label>Pesquisar por Placa da Moto:</Form.Label>
+        <Form.Control
+          type="text"
+          value={filtroPlaca}
+          onChange={(e) => setFiltroPlaca(e.target.value)}
+          placeholder="Digite a placa da moto"
+          aria-label="Filtro de placa de moto"
+        />
+        <Button variant="danger" onClick={handleSearch} className="mb-4" >
+        Pesquisar
+      </Button>
+      </Form.Group>
+
+
+      {/* Formulário de edição do cadastro */}
+      <h4 className= "estilo" style={{ color: 'white' }}>Cadastro de Motoboy</h4>
+      <Form onSubmit={handleSubmit} className="cadastro-form">
+        
+        {/* Campo Nome */}
+        <Form.Group controlId="nome">
+          <Form.Label>Nome:</Form.Label>
+          <Form.Control
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            placeholder="Digite o nome completo"
+            required
+            aria-label="Nome completo"
+          />
+        </Form.Group>
+
+        {/* Campo CPF */}
+        <Form.Group controlId="cpf">
+          <Form.Label>CPF:</Form.Label>
+          <Form.Control
+            type="text"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
+            placeholder="Digite o CPF"
+            maxLength="11"
+            required
+            aria-label="CPF"
+          />
+        </Form.Group>
+
+        {/* Campo E-mail */}
+        <Form.Group controlId="email">
+          <Form.Label>E-mail:</Form.Label>
+          <Form.Control
             type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={motoboy.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Digite o e-mail"
             required
+            aria-label="E-mail"
           />
-        </div>
+        </Form.Group>
 
-        <div className="mb-3">
-          <label htmlFor="telefone" className="form-label">Telefone</label>
-          <input
+        {/* Campo Telefone */}
+        <Form.Group controlId="telefone">
+          <Form.Label>Telefone:</Form.Label>
+          <Form.Control
             type="text"
-            className="form-control"
-            id="telefone"
-            name="telefone"
-            value={motoboy.telefone}
-            onChange={handleChange}
+            value={telefone}
+            onChange={(e) => setTelefone(e.target.value)}
+            placeholder="Digite o telefone"
             required
+            aria-label="Telefone"
           />
-        </div>
+        </Form.Group>
 
-        <div className="mb-3">
-          <label htmlFor="cpf" className="form-label">CPF</label>
-          <input
+        {/* Campo Data de Nascimento */}
+        <Form.Group controlId="dataNascimento">
+          <Form.Label>Data de Nascimento:</Form.Label>
+          <Form.Control
+            type="date"
+            value={dataNascimento}
+            onChange={(e) => setDataNascimento(e.target.value)}
+            required
+            aria-label="Data de nascimento"
+          />
+        </Form.Group>
+
+        {/* Campo Placa da Moto */}
+        <Form.Group controlId="placaMoto">
+          <Form.Label>Placa da Moto:</Form.Label>
+          <Form.Control
             type="text"
-            className="form-control"
-            id="cpf"
-            name="cpf"
-            value={motoboy.cpf}
-            onChange={handleChange}
+            value={placaMoto}
+            onChange={(e) => setPlacaMoto(e.target.value)}
+            placeholder="Digite a placa da moto"
             required
+            aria-label="Placa da moto"
           />
-        </div>
+        </Form.Group>
 
-        <h4>Informações da Moto</h4>
-
-        <div className="mb-3">
-          <label htmlFor="modeloMoto" className="form-label">Modelo da Moto</label>
-          <input
-            type="text"
-            className="form-control"
-            id="modeloMoto"
-            name="modeloMoto"
-            value={motoboy.modeloMoto}
-            onChange={handleChange}
+        {/* Campo Senha */}
+        <Form.Group controlId="senha">
+          <Form.Label>Senha:</Form.Label>
+          <Form.Control
+            type="password"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Digite a senha"
             required
+            aria-label="Senha"
           />
-        </div>
+        </Form.Group>
 
-        <div className="mb-3">
-          <label htmlFor="placaMoto" className="form-label">Placa da Moto</label>
-          <input
-            type="text"
-            className="form-control"
-            id="placaMoto"
-            name="placaMoto"
-            value={motoboy.placaMoto}
-            onChange={handleChange}
+        {/* Campo Confirmar Senha */}
+        <Form.Group controlId="confirmarSenha">
+          <Form.Label>Confirmar Senha:</Form.Label>
+          <Form.Control
+            type="password"
+            value={confirmarSenha}
+            onChange={(e) => setConfirmarSenha(e.target.value)}
+            placeholder="Confirme a senha"
             required
+            aria-label="Confirmar senha"
           />
-        </div>
+        </Form.Group>
 
-        <div className="mb-3">
-          <label htmlFor="anoMoto" className="form-label">Ano da Moto</label>
-          <input
-            type="number"
-            className="form-control"
-            id="anoMoto"
-            name="anoMoto"
-            value={motoboy.anoMoto}
-            onChange={handleChange}
-            required
-            min="1900"
-            max={new Date().getFullYear()}
-          />
-        </div>
+        {/* Botões de ação */}
+        <div className="button-group mt-4">
+        <Button variant="danger" type="submit" style={{ marginRight: '15px' }}>
+  Salvar
+</Button>
+<Button variant="danger" onClick={handleDelete}>
+  Deletar
+</Button>
 
-        <button type="submit" className="btn btn-primary">Atualizar</button>
-      </form>
+        </div>
+      </Form>
     </div>
   );
-};
+}
 
 export default EditarCadastroMotoboy;
