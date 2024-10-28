@@ -1,5 +1,5 @@
 import React from 'react';
-import './Suporte.css';
+import './TelaSuporte.css';
 import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
 import suporte from '../../../assets/icon/suporte.png';
 
