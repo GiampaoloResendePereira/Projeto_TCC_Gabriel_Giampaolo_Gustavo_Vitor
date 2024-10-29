@@ -1,4 +1,5 @@
-[
+{
+  "motoboy": [
     {
       "nome": "João da Silva",
       "email": "joao.silva@example.com",
@@ -18,4 +19,4 @@
       "anoMoto": 2021
     }
   ]
-  
+}

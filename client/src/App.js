@@ -31,6 +31,8 @@ import FormEdit from './components/pages/FormEditar/FormEdit';
 import GerenciamentoEntregas from './components/pages/GerenciamentoEntregas';
 import Home from './components/pages/Home'
 import LoginInicio from './components/pages/LoginInicio';
+import FormCadastroClient from './components/FormCadastro/FormCadastroClient';
+import GestaoClient from './components/pages/GestaoClient';
 
 const App = () => {
   return (
@@ -63,6 +65,11 @@ const App = () => {
         <Route path ='/gerenciamento_entregas' element={<GerenciamentoEntregas/>}/>
         <Route path ='/form_entregas' element={<FormEdit/>}/>
         <Route path ='/login_inicio' element={<LoginInicio/>}/>
+        <Route path ='/cadastro_client' element={<FormCadastroClient/>}/>
+        <Route path ='/gestao_client' element={<GestaoClient/>}/>
+        <Route path ='/gestao_client/:id' element={<GestaoClient/>}/>
+        <Route path ='/gestao_client/:tipo' element={<GestaoClient/>}/>
+
       </Routes>
     </Router>
   );
