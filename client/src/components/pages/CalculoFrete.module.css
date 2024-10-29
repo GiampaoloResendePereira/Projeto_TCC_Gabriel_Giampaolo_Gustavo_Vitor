@@ -45,5 +45,11 @@
     width: 900px;
 }
 
+.calculoInputs{
+    justify-content: flex-start;
+    width: 250px;
+
+}
+
 
 

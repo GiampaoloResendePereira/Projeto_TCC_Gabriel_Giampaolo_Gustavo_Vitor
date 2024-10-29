@@ -4,6 +4,7 @@ import promo1 from '../../assets/img/promo1.png';
 import promo2 from '../../assets/img/promo2.png';
 import promo3 from '../../assets/img/promo3.png';
 import '../../styles/global.css';
+import style from './Styles/CarrosselPromocoes.module.css';
 
 const CarrosselPromocoes = () => {
   return (

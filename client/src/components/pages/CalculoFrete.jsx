@@ -20,12 +20,13 @@ function CalculoFrete() {
             <input type="text" />
             </div>
         </div>
+        <div >
           <div className='informativo'>
             <h6><strong>Tamanho e peso do pacote</strong></h6>
             <p>O pacote pode ter até 30kg e até 100cm em cada lado.</p>
             <p> A soma dos lados não deve ultrapassar 200cm.</p>
           </div>
-          <div className='inputs'>
+          <div className={styles.calculoInputs}>
             <label htmlFor="">Lagura  cm</label>
             <input type="text" />
             <label htmlFor="">Altrura  cm</label>
@@ -38,6 +39,7 @@ function CalculoFrete() {
           </div>
           <div className="calculo_form">
             <button type="submit" class="btn btn-outline-danger">CALCULAR</button>
+          </div>
           </div>
         </form>
         </div>
