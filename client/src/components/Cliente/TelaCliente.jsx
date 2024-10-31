@@ -28,8 +28,8 @@ const TelaCliente = () => {
             <img src={logo} alt="Logo" height="50" />
           </Link>
           <Nav className="me-auto">
-            <Nav.Link href="/solicitacao-transporte">Solicitação de Frete</Nav.Link>
-            <Nav.Link href="/Acompanhamento">Acompanhamento do frete</Nav.Link>
+            <Nav.Link href="/cadastro_frete">Realizar Pedido</Nav.Link>
+            <Nav.Link href="/pedidos_cadastrados">Pedidos Cadastrados</Nav.Link>
             <Nav.Link href="/tela_suporte">Suporte</Nav.Link>
             
             <div className="align-right">

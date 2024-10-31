@@ -1,0 +1,42 @@
+.navbar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-container {
+    margin: 50px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    display: flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.label {
+    display: inline-block; /* Necessário para aplicar largura e altura */
+    background-color: red; /* Cor de fundo opcional */
+    border-radius: 500px; /* Altera para o valor desejado */
+    padding: 5px 10px; /* Espaçamento interno */
+}

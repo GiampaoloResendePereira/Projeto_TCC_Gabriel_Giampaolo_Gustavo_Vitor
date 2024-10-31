@@ -34,6 +34,8 @@ import LoginInicio from './components/pages/LoginInicio';
 
 //Vitor
 import TelaSuporte from './components/Cliente/TelaSuporte';
+import CadastroFrete from './components/Cliente/CadastroFrete';
+import PedidosCadastrados from './components/Cliente/PedidosCadastrados';
 
 const App = () => {
   return (
@@ -69,6 +71,8 @@ const App = () => {
         <Route path ='/login_inicio' element={<LoginInicio/>}/>
         {/*Vitor*/}
         <Route path ='/tela_suporte' element={<TelaSuporte/>}/> 
+        <Route path ='/cadastro_frete' element={<CadastroFrete/>}/> 
+        <Route path ='/pedidos_cadastrados' element={<PedidosCadastrados/>}/> 
       </Routes>
     </Router>
   );
