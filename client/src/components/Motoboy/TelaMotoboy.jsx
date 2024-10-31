@@ -27,7 +27,7 @@ function TelaMotoboy() {
           <Nav className="me-auto">
            
           <div className="ms-auto">
-          <button className="sair-button" onClick={handleAdminLogin}>
+          <button className="sair-button"  onClick={handleAdminLogin}>
             Sair
           </button>
         </div>
