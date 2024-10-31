@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/img/logo.png';
+import AceitarCorridas from './AceitaCorridas';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; // Importa o hook para navegação
 
@@ -34,7 +35,7 @@ function TelaMotoboy() {
       </Navbar>
 
       
-      
+      <AceitarCorridas/>
     </div>
   );
 }

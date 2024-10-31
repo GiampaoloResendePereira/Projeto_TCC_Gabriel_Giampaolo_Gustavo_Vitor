@@ -1,6 +1,6 @@
 // src/pages/AceitarCorridas.jsx
 import React, { useState } from 'react';
-import { Table, Button, Container, Modal } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 
 function AceitarCorridas() {
   // Estado para armazenar as corridas disponíveis e a corrida selecionada
@@ -30,39 +30,29 @@ function AceitarCorridas() {
 
   return (
     <Container className="mt-5">
-      <h4 className="text-white">Aceitar Corridas</h4>
-
-      {/* Tabela de corridas disponíveis */}
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Cliente</th>
-            <th>Destino</th>
-            <th>Horário</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {corridas.map(corrida => (
-            <tr key={corrida.id}>
-              <td>{corrida.id}</td>
-              <td>{corrida.cliente}</td>
-              <td>{corrida.destino}</td>
-              <td>{corrida.horario}</td>
-              <td>{corrida.status}</td>
-              <td>
+      <h4 className="text-white mb-4">Aceitar Corridas</h4>
+      <Row xs={1} md={2} lg={3} className="g-4">
+        {corridas.map(corrida => (
+          <Col key={corrida.id}>
+            <Card bg="dark" text="light" className="h-100">
+              <Card.Body>
+                <Card.Title>ID: {corrida.id}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Cliente: {corrida.cliente}</Card.Subtitle>
+                <Card.Text>
+                  <strong>Destino:</strong> {corrida.destino} <br />
+                  <strong>Horário:</strong> {corrida.horario} <br />
+                  <strong>Status:</strong> {corrida.status}
+                </Card.Text>
                 {corrida.status === 'Disponível' && (
                   <Button variant="success" onClick={() => handleAccept(corrida.id)}>
                     Aceitar
                   </Button>
                 )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
 
       {/* Modal de confirmação */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
