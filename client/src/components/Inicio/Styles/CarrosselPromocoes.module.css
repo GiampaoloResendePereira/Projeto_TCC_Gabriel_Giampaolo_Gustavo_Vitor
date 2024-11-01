@@ -7,7 +7,7 @@
     width: 95%; /* Defina uma largura */
     margin: 20px;
     margin-left:50px;
-    border-radius: 15px;
+    border-radius: 20px;
    
     
 }
@@ -19,6 +19,6 @@
 
 .black{
     background-color:black;
-    border-radius: 10px;
+    border-radius: 15px;
        
 }
