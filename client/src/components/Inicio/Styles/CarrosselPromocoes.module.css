@@ -2,3 +2,23 @@
     max-width: 300px; /* Define a largura máxima da imagem */
     height: auto; /* Mantém a proporção da imagem */
 }
+
+.slogan{
+    width: 95%; /* Defina uma largura */
+    margin: 20px;
+    margin-left:50px;
+    border-radius: 15px;
+   
+    
+}
+
+.slogan img{
+    border-radius: 20px;
+    
+}
+
+.black{
+    background-color:black;
+    border-radius: 10px;
+       
+}
