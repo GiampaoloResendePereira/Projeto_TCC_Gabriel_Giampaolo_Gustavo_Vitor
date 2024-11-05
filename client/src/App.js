@@ -15,7 +15,7 @@ import CadastroMotoboy from './components/Administrador/CadastroMotoboy';
 import CadastroCliente from './components/Inicio/CadastroCliente';
 import Acompanhamento from './components/Cliente/Acompanhamento';
 import HistoricoCliente from './components/Cliente/HistoricoCliente';
-import SolicitacaoTransporte from './components/Cliente/SolicitacaoTransporte';
+import SolicitacaoTransporte from './components/Vitor/SolicitacaoTransporte';
 import TelaCliente from './components/Cliente/TelaCliente';
 import AceitaCorridas from './components/Motoboy/AceitaCorridas';
 import HistoricoMotoboy from './components/Motoboy/HistoricoMotoboy';
