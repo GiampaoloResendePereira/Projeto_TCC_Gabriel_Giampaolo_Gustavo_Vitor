@@ -2,8 +2,27 @@ import React from 'react'
 import NavBarClient from '../layout/NavBarClient'
 import styles from '../pages/CalculoFrete.module.css'
 import NavBarNavigation from '../layout/NavBarAdmin'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function CalculoFrete() {
+function CalculoFrete({id}) {
+
+  const navigate = useNavigate(); //fazer a navegação entre as paginas sem precisar dos Link
+  const [cepOrigem, setCepOrigem] = useState('');
+  const [cepDestinatario, setcepDestinnatario] = useState('');
+  const [largura, setLargura] = useState('');
+  const [altura, setAltura] = useState ('');
+  const [comprimento, setComprimento] = useState('');
+  const [peso,setPeso] = useState('');
+ 
+  useEffect(() => {
+    if (id){
+      
+
+    }
+  })  
+
+
   return (
     <>
       <div className={styles.calculo}>
@@ -23,7 +42,7 @@ function CalculoFrete() {
             <div className={`${styles.informativo} container`}>
               <h6><strong>Tamanho e peso do pacote</strong></h6>
               <p>O pacote pode ter até 30kg e até 100cm em cada lado.
-               A soma dos lados não deve ultrapassar 200cm.</p>
+                A soma dos lados não deve ultrapassar 200cm.</p>
             </div>
             <div className='container'>
               <div className={styles.calculoInputs}>

@@ -39,7 +39,12 @@
             "status": "Em andamento",
             "dataAgendamento": "2024-10-10",
             "dataEntrega": "2024-10-11",
+            "cepOrigem": "29145484",
+            "cepDestinatario":"29145849",
             "peso": "5kg",
+            "largura": "10cm",
+            "altura": "20cm",
+            "comprimento": "30cm",
             "distancia": "10km",
             "custo": "R$ 20,00",
             "historicoStatus": [

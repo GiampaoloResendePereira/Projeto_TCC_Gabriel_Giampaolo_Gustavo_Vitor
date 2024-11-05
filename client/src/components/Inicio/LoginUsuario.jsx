@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import logo from '../../assets/img/logo.png'; // Certifique-se de que o caminho para a logo está correto
 import '../../styles/LoginUsuario.css';
+import { Link } from "react-router-dom";
 
 const LoginAdmin = () => {
   const [email, setEmail] = useState("");
@@ -43,6 +44,10 @@ const LoginAdmin = () => {
             onChange={(e) => setSenha(e.target.value)}
             className="login-input"
           />
+          <div>
+          <Link className="btn btn-dannger mt-2" to="/login">Voltar</Link>
+          <Link className="btn btn-dannger mt-2" to="/cadastro_client">Cadastrar</Link>
+          </div>
           <Button variant="danger" type="submit" className="mt-4">
             Entrar
           </Button>
