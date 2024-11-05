@@ -45,11 +45,35 @@
     width: 900px;
 }
 
-.calculoInputs{
+.calculoInputs input{
     justify-content: flex-start;
-    width: 250px;
+    width: 350px;
+    margin-right: 15px;
 
 }
+
+.calculoInputs{
+    display: flex;
+    margin: 30px;
+}
+
+.entregasCalculo h3{
+    background-color: red;
+    color: white;
+}
+.entregasCalculo{
+    background-color: red;
+    height: 150px;
+    width: 450px;
+    border: 1px solid black;
+    margin-left: auto;
+    /* display: none; */
+}
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 
 

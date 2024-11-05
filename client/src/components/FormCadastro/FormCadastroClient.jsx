@@ -30,8 +30,6 @@ async function baixarClient(id) {
   }
   
 }
-
-
   function submit(e) {
     e.preventDefault();
 
@@ -148,9 +146,6 @@ async function baixarClient(id) {
          onChange={(e)=> setEstado(e.targe.value)} />
     
          
-
-
-
       </form>
     </div>
   )
