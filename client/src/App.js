@@ -25,7 +25,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/global.css';
 
 
-//gustavo
+//
 import CalculoFrete from './components/pages/CalculoFrete';
 import FormEdit from './components/pages/FormEditar/FormEdit';
 import GerenciamentoEntregas from './components/pages/GerenciamentoEntregas';
@@ -39,8 +39,9 @@ const App = () => {
     <Router>
       <Routes>
         {/* Rotas */}
-        <Route path="/" element={<TelaInicio />} />
+        <Route path="/tela_inicio" element={<TelaInicio />} />
         <Route path="/simulador-frete" element={<SimuladorFrete />} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastrar-cliente" element={<CadastroCliente />} />
         <Route path="/login-usuario" element={<LoginUsuario />} />
@@ -60,7 +61,7 @@ const App = () => {
         <Route path="/historico-motoboy" element={<HistoricoMotoboy />} />
         <Route path="/notificacoes-motoboy" element={<NotificacoesMotoboy />} />
         <Route path="/motoboy" element={<TelaMotoboy />} />
-          {/* //gustavo */}
+          {/* // */}
         <Route path ='/' element={<Home/>}/>
         <Route path ='/gerenciamento_entregas' element={<GerenciamentoEntregas/>}/>
         <Route path ='/form_entregas' element={<FormEdit/>}/>
@@ -69,7 +70,6 @@ const App = () => {
         <Route path ='/gestao_client' element={<GestaoClient/>}/>
         <Route path ='/gestao_client/:id' element={<GestaoClient/>}/>
         <Route path ='/gestao_client/:tipo' element={<GestaoClient/>}/>
-
       </Routes>
     </Router>
   );

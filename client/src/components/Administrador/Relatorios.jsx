@@ -30,22 +30,22 @@ function Relatorio() {
     resetForm();
   };
 
-//   const gerarPDF = () => {
-//     //const doc = new jsPDF();
-//     doc.text(`Título do Relatório: ${titulo}`, 10, 10);
-//     doc.text(`Descrição: ${descricao}`, 10, 20);
-//     doc.text(`Data: ${data}`, 10, 30);
-//     doc.save('Relatorio.pdf');
-//   };
+   const gerarPDF = () => {
+const doc = new jsPDF();
+     doc.text(`Título do Relatório: ${titulo}`, 10, 10);
+     doc.text(`Descrição: ${descricao}`, 10, 20);
+     doc.text(`Data: ${data}`, 10, 30);
+     doc.save('Relatorio.pdf');
+   };
 
-//   const gerarTexto = () => {
-//     const texto = `Título do Relatório: ${titulo}\nDescrição: ${descricao}\nData: ${data}`;
-//     const blob = new Blob([texto], { type: 'text/plain' });
-//     const link = document.createElement('a');
-//     link.href = URL.createObjectURL(blob);
-//     link.download = 'Relatorio.txt';
-//     link.click();
-//   };
+   const gerarTexto = () => {
+     const texto = `Título do Relatório: ${titulo}\nDescrição: ${descricao}\nData: ${data}`;
+    const blob = new Blob([texto], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'Relatorio.txt';
+    link.click();
+  };
 
   const resetForm = () => {
     setTitulo('');

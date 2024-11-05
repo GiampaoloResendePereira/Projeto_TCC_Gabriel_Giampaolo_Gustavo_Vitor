@@ -16,7 +16,7 @@ const LoginAdmin = () => {
     if (email === "admin@gmail.com" && senha === "admin123") {
       navigate("/administrador");
     } else if (email === "cliente@gmail.com" && senha === "cliente123") {
-      navigate("/cliente");
+      navigate("/tela_inicio");
     } else if (email === "motoboy@gmail.com" && senha === "motoboy123") {
       navigate("/motoboy");
     } else {
