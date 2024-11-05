@@ -1,8 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styles from './FormCadastroClient.module.css'
 
-function FormCadastroClient({ titulo, id, handleSubimit }) {
+function FormCadastroClient({ titulo, id, handleSubimit, txtBtn }) {
 
   const navigate = useNavigate(); // fazer a navegação entre as paginas 
   const [nameClient, setNameClient] = useState('');
@@ -30,8 +32,6 @@ async function baixarClient(id) {
   }
   
 }
-
-
   function submit(e) {
     e.preventDefault();
 
@@ -59,7 +59,7 @@ async function baixarClient(id) {
 
     //criando formulario para o cadastro, e fazendo a trativa para ser enviado para o json
     <div className="container justify-content-center col-sm-12 col-md-6 col-lg-3">
-      <h1 className='text-center'>Cadastro Cliente</h1>
+      <h1 className={styles.textCenter}>Cadastro Cliente</h1>
       <form onSubmit={submit}>
         <label className="form-label" htlmFor="">
           Nome:
@@ -127,7 +127,7 @@ async function baixarClient(id) {
          name=""
          id=""
          value={bairroClient}
-         onChange={(e)=> setBairro(e.targe.value)} />
+         onChange={(e)=> setBairro(e.target.value)} />
          <label className="form-label" htmlFor="">
           Cidade:
          </label>
@@ -136,7 +136,7 @@ async function baixarClient(id) {
          name=""
          id=""
          value={cidadeClient}
-         onChange={(e)=> setCidade(e.targe.value)} />
+         onChange={(e)=> setCidade(e.target.value)} />
          <label className="form-label" htmlFor="">
           Estado:
          </label>
@@ -145,12 +145,9 @@ async function baixarClient(id) {
          name=""
          id=""
          value={estadoClient}
-         onChange={(e)=> setEstado(e.targe.value)} />
-    
-         
-
-
-
+         onChange={(e)=> setEstado(e.target.value)} />
+         <Link className='btn btn-danger mt-2' to='/login-usuario'>Cancelar</Link>
+         <button className='btn btn-success mt-2 float-end' type='subimit'>Cadastrar{txtBtn}</button>
       </form>
     </div>
   )
