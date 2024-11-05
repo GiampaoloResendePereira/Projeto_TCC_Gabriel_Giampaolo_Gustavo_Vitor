@@ -12,6 +12,12 @@ import Login from './components/Inicio/Login';
 import LoginUsuario from './components/Inicio/LoginUsuario';
 import CadastroMotoboy from './components/Administrador/CadastroMotoboy';
 import CadastroCliente from './components/Inicio/CadastroCliente';
+<<<<<<< HEAD
+=======
+import Acompanhamento from './components/Cliente/Acompanhamento';
+import HistoricoCliente from './components/Cliente/HistoricoCliente';
+import SolicitacaoTransporte from './components/Vitor/SolicitacaoTransporte';
+>>>>>>> 39a98b4a3d6b2b163d093dc6cca32ef36bfa0258
 import TelaCliente from './components/Cliente/TelaCliente';
 import AceitaCorridas from './components/Motoboy/AceitaCorridas';
 import TelaMotoboy from './components/Motoboy/TelaMotoboy';
