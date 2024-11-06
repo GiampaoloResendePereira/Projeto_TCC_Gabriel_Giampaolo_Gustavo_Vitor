@@ -1,0 +1,16 @@
+{
+    "client": [
+        {
+            "id":"1",
+            "nomeClient":"Gustavo Dias",
+            "telefone":"2799845845",
+            "contato":"279965482",
+            "cep":"98145-784",
+            "rua":"Rua dos peregrinos",
+            "numeroResidencia":"98",
+            "bairro":"São Franscisco",
+            "cidade":"Serra",
+            "estado":"ES"
+        }
+    ]
+}

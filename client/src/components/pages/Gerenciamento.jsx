@@ -1,16 +1,12 @@
 import React from 'react'
-import styles from './GerenciamentoEntregas.css'
+import styles from './Gerenciamento.css'
 import EntregasGet from '../Crude/EntregasGet'
 import FormEdit from './FormEditar/FormEdit'
 import NavBarNavigation from '../layout/NavBarAdmin'
 
 
 
-
-
-
-
-function Gerenciamento_entregas() {
+function Gerenciamento() {
 
   return (
 
@@ -71,4 +67,4 @@ function Gerenciamento_entregas() {
   )
 }
 
-export default Gerenciamento_entregas
+export default Gerenciamento
