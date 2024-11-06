@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/SolicitacaoTransporte.css';
 
 function SolicitacaoFrete() {
   // Estados para os campos iniciais
@@ -59,7 +60,8 @@ function SolicitacaoFrete() {
           <label>Peso (kg):</label>
           <input type="number" value={peso} onChange={(e) => setPeso(e.target.value)} />
         </div>
-        <button onClick={calcularFrete}>Calcular Frete</button>
+        <br />
+        <button onClick={calcularFrete} className='btn'>Calcular Frete</button>
       </div>
 
       {/* Resultado do Cálculo do Frete */}
@@ -67,7 +69,7 @@ function SolicitacaoFrete() {
         <div style={{ backgroundColor: 'red', color: 'white', padding: '20px', marginTop: '20px' }}>
           <p>Preço do Frete: R$ {precoFrete}</p>
           <p>Deseja solicitar frete?</p>
-          <button onClick={confirmarFrete}>Sim, Solicitar Frete</button>
+          <button onClick={confirmarFrete} className='btn2'>Sim, Solicitar Frete</button>
         </div>
       )}
 
