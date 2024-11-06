@@ -42,15 +42,10 @@ const App = () => {
         <Route path="/aceita-corridas" element={<AceitaCorridas />} />
 
         <Route path="/administrador" element={<TelaAdministrador />} />
-        <Route
-          path="/gerenciamento-entregas"
-          element={<GerenciamentoEntrega />}
+        <Route path="/gerenciamento-entregas" element={<GerenciamentoEntrega />}
         />
         <Route path="/editar-parametro" element={<EditarParametro />} />
-        <Route
-          path="/editar-cadastro-cliente"
-          element={<EditarCadastroCliente />}
-        />
+        <Route path="/editar-cadastro-cliente" element={<EditarCadastroCliente />} />
 
         <Route path="/form_entregas" element={<FormEdit />} />
         <Route path="/cadastro_client" element={<FormCadastroClient />} />

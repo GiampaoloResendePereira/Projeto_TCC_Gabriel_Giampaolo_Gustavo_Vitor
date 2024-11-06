@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import logo from '../../assets/img/logo.png'; // Certifique-se de que o caminho para a logo está correto
-import '../../styles/LoginUsuario.css';
+import styles from '../../styles/LoginUsuario.css';
 import { Link } from "react-router-dom";
 
 const LoginAdmin = () => {
@@ -11,12 +11,14 @@ const LoginAdmin = () => {
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
+  
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === "admin@gmail.com" && senha === "admin123") {
       navigate("/administrador");
     } else if (email === "cliente@gmail.com" && senha === "cliente123") {
-      navigate("/tela_inicio");
+      navigate("/cliente");
     } else if (email === "motoboy@gmail.com" && senha === "motoboy123") {
       navigate("/motoboy");
     } else {
@@ -26,9 +28,11 @@ const LoginAdmin = () => {
 
   return (
     <div className="login-container">
-      <div className="login-form">
+      <div className="login_form">
+        <div className={styles.login_form}>
         <img src={logo} alt="Logo" className="login-logo" />
         <h4 className="login-title">Login</h4>
+        </div>
         <form onSubmit={handleLogin} className="login-inputs">
           <input
             type="email"
