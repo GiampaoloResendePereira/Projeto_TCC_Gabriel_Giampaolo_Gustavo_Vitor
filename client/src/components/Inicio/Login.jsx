@@ -6,26 +6,34 @@ import adminImg from '../../assets/img/administrador.png';
 import clienteImg from '../../assets/img/cliente.png';
 import motoboyImg from '../../assets/img/motoboy.png';
 
-//props
+
+
+function filho ({SaveLoginADM,}){
+
+}
+
+//props pai
 const Login = () => {
-    const SaveLoginADM = "loginAdm";
-    const SaveLoginClient = "loginClient";
-    const SaveLoginMotoboy = "loginMotoboy";
+    var SaveLogin = "";
+    
   
   const navigate = useNavigate(); // Hook para navegação entre as rotas
 
   // Funções de navegação para cada tela
   const handleAdminLogin = () => {
+    SaveLogin = "loginAdm"
     navigate("/login-usuario"); // Redireciona para a tela do Administrador
     
   };
 
   const handleClientLogin = () => {
+    SaveLogin = "loginClient";
     navigate("/login-usuario"); // Redireciona para a tela do Cliente
     
   };
 
   const handleMotoboyLogin = () => {
+    SaveLogin = "loginMotoboy"
     navigate("/login-usuario"); // Redireciona para a tela do Motoboy
     
   };
