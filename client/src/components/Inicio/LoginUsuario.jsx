@@ -6,12 +6,28 @@ import logo from '../../assets/img/logo.png'; // Certifique-se de que o caminho 
 import styles from '../../styles/LoginUsuario.css';
 import { Link } from "react-router-dom";
 
-const LoginAdmin = () => {
+
+
+
+
+
+const LoginAdmin = ({ txtBTN }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
-  
+
+  //verificando se o valor da variável para direcionar a tela correta
+  function loginTipo(txtBTN) {
+    const tipoLogin = {txtBTN};
+    if (tipoLogin == 'admin@gmail.com') {
+      <Link to="/administrador"></Link>
+
+    } else if (tipoLogin == "cliente@gmail.com"){
+      <Link to="/cliente"></Link>
+    }
+  }
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -30,8 +46,8 @@ const LoginAdmin = () => {
     <div className="login-container">
       <div className="login_form">
         <div className={styles.login_form}>
-        <img src={logo} alt="Logo" className="login-logo" />
-        <h4 className="login-title">Login</h4>
+          <img src={logo} alt="Logo" className="login-logo" />
+          <h4 className="login-title">Login</h4>
         </div>
         <form onSubmit={handleLogin} className="login-inputs">
           <input
@@ -49,11 +65,11 @@ const LoginAdmin = () => {
             className="login-input"
           />
           <div>
-          <Link className="btn btn-dannger mt-2" to="/login">Voltar</Link>
-          <Link className="btn btn-dannger mt-2" to="/cadastro_client">Cadastrar</Link>
+            <Link className="btn btn-danger mt-2" to="/">Voltar</Link>
+            <Link className="btn btn-danger mt-2" to="/cadastro_client">Cadastrar</Link>
           </div>
           <Button variant="danger" type="submit" className="mt-4">
-            Entrar
+            Entrar{txtBTN}
           </Button>
         </form>
       </div>

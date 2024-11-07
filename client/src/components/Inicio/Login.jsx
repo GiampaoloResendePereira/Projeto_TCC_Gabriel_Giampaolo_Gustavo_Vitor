@@ -6,7 +6,7 @@ import adminImg from '../../assets/img/administrador.png';
 import clienteImg from '../../assets/img/cliente.png';
 import motoboyImg from '../../assets/img/motoboy.png';
 
-const Login = () => {
+const Login = ({SalvLogin}) => {
   const navigate = useNavigate(); // Hook para navegação entre as rotas
 
   // Funções de navegação para cada tela
@@ -31,7 +31,7 @@ const Login = () => {
         <div className="login-option">
           <img src={adminImg} alt="Administrador" className="login-icon" />
           <button className="login-button" onClick={handleAdminLogin}>
-            Administrador
+            Administrador{SalvLogin}
           </button>
         </div>
 
@@ -39,7 +39,7 @@ const Login = () => {
         <div className="login-option">
           <img src={clienteImg} alt="Cliente" className="login-icon" />
           <button className="login-button" onClick={handleClientLogin}>
-            Cliente
+            Cliente{SalvLogin}
           </button>
         </div>
 
