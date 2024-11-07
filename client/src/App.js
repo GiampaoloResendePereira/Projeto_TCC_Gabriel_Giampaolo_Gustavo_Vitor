@@ -23,6 +23,7 @@ import Home from "./components/pages/Home";
 import LoginInicio from "./components/pages/LoginInicio";
 import FormCadastroClient from "./components/FormCadastro/FormCadastroClient";
 import GestaoClient from "./components/pages/GestaoClient";
+import GerenciamentoClient from "./components/pages/GerenciamentoClient/GerenciarClient";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/global.css";
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/login_inicio" element={<LoginInicio />} />
 
         <Route path="/simulador-frete" element={<SimuladorFrete />} />
+        <Route path ="/gerenciamento_client" element= {<GerenciamentoClient/>}/>
         <Route path="/cliente" element={<TelaCliente />} />
         <Route path="/gestao_client" element={<GestaoClient />} />
         <Route path="/gestao_client/:id" element={<GestaoClient />} />
