@@ -6,20 +6,28 @@ import adminImg from '../../assets/img/administrador.png';
 import clienteImg from '../../assets/img/cliente.png';
 import motoboyImg from '../../assets/img/motoboy.png';
 
-const Login = ({SalvLogin}) => {
+//props
+const Login = () => {
+    const SaveLoginADM = "loginAdm";
+    const SaveLoginClient = "loginClient";
+    const SaveLoginMotoboy = "loginMotoboy";
+  
   const navigate = useNavigate(); // Hook para navegação entre as rotas
 
   // Funções de navegação para cada tela
   const handleAdminLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Administrador
+    
   };
 
   const handleClientLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Cliente
+    
   };
 
   const handleMotoboyLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Motoboy
+    
   };
 
   return (
@@ -31,7 +39,7 @@ const Login = ({SalvLogin}) => {
         <div className="login-option">
           <img src={adminImg} alt="Administrador" className="login-icon" />
           <button className="login-button" onClick={handleAdminLogin}>
-            Administrador{SalvLogin}
+            Administrador
           </button>
         </div>
 
@@ -39,7 +47,7 @@ const Login = ({SalvLogin}) => {
         <div className="login-option">
           <img src={clienteImg} alt="Cliente" className="login-icon" />
           <button className="login-button" onClick={handleClientLogin}>
-            Cliente{SalvLogin}
+            Cliente
           </button>
         </div>
 
@@ -53,6 +61,8 @@ const Login = ({SalvLogin}) => {
       </div>
     </div>
   );
+
 };
+
 
 export default Login;
