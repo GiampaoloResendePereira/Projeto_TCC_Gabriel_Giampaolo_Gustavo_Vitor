@@ -1,58 +1,54 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  h1, h2 {
-    border: 2px solid #a1a0a0; 
-    border-radius: 15px;    
-    padding: 10px;       
-    color: black;
-  }
-  
-  h4 {
-    background-color: white; 
-    color: black; 
-    padding: 10px; 
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    background-color: rgb(230, 39, 39);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: red;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
 
-  .sair-button {
-    width: 200px;            /* Ajusta a largura do botão (pode ser alterado conforme necessário) */
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #ffffff; /* cor de fundo do botão */
-    color: #000000; /* cor do texto do botão */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;      /* Torna o botão posicionado de forma absoluta */
-    top: 10px;               /* A 10px do topo da tela ou contêiner */
-    right: 10px;             /* A 10px da borda direita da tela ou contêiner */
-  }
+h1,h2 {
+ 
+  border-radius: 15px;
+  padding: 10px;
+  color: black;
+}
 
-  .btn2{
-    background-color: #000000;
-  }
-          
-  
+h4 {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
 
-  
-  
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: rgb(230, 39, 39);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+.sair-button {
+  width: 200px; /* Ajusta a largura do botão (pode ser alterado conforme necessário) */
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #ffffff; /* cor de fundo do botão */
+  color: #000000; /* cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute; /* Torna o botão posicionado de forma absoluta */
+  top: 10px; /* A 10px do topo da tela ou contêiner */
+  right: 10px; /* A 10px da borda direita da tela ou contêiner */
+}
+
+.btn2 {
+  background-color: #000000;
+}

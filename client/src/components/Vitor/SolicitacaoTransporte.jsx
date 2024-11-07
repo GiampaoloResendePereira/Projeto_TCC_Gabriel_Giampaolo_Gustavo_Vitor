@@ -14,14 +14,32 @@ function SolicitacaoFrete() {
   const [precoFrete, setPrecoFrete] = useState(null);
   const [confirmandoFrete, setConfirmandoFrete] = useState(false);
   const [solicitacaoEnviada, setSolicitacaoEnviada] = useState(false);
+  const [erroCep, setErroCep] = useState(false);
+
+  // Função para validar CEP (formato #####-###)
+  const validarCep = (cep) => {
+    const regexCep = /^[0-9]{5}-[0-9]{3}$/;
+    return regexCep.test(cep);
+  };
 
   // Função para calcular frete
   const calcularFrete = () => {
-    // Aqui você incluiria a lógica para calcular o valor do frete
-    // e validar os campos como CEPs, dimensões e peso.
-    if (cepOrigem && cepDestino && largura && altura && comprimento && peso) {
+    // Validação dos CEPs
+    if (!validarCep(cepOrigem)) {
+      setErroCep('CEP de origem inválido. Formato correto: #####-###.');
+      return;
+    }
+
+    if (!validarCep(cepDestino)) {
+      setErroCep('CEP de destino inválido. Formato correto: #####-###.');
+      return;
+    }
+
+    // Validação dos outros campos
+    if (largura && altura && comprimento && peso) {
       setPrecoFrete(150); // Exemplo de valor calculado
       setConfirmandoFrete(true);
+      setErroCep(''); // Limpa a mensagem de erro, se houver
     } else {
       alert('Preencha todos os campos para calcular o frete.');
     }
@@ -42,12 +60,24 @@ function SolicitacaoFrete() {
       <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
         <div>
           <label>Digite CEP de origem:</label>
-          <input type="text" value={cepOrigem} onChange={(e) => setCepOrigem(e.target.value)} />
+          <input
+            type="text"
+            value={cepOrigem}
+            onChange={(e) => setCepOrigem(e.target.value)}
+            placeholder="Ex: 12345-678"
+          />
         </div>
+        
         <div>
           <label>Digite CEP do destinatário:</label>
-          <input type="text" value={cepDestino} onChange={(e) => setCepDestino(e.target.value)} />
+          <input
+            type="text"
+            value={cepDestino}
+            onChange={(e) => setCepDestino(e.target.value)}
+            placeholder="Ex: 12345-678"
+          />
         </div>
+        {erroCep && <p style={{ color: 'red' }}>{erroCep}</p>}
         <div>
           <h4>Tamanho e peso do pacote</h4>
           <p>O pacote pode ter até 30 kg e até 100 cm em cada lado. A soma dos lados não deve ultrapassar 200 cm.</p>
@@ -66,7 +96,7 @@ function SolicitacaoFrete() {
 
       {/* Resultado do Cálculo do Frete */}
       {precoFrete && confirmandoFrete && (
-        <div style={{ backgroundColor: 'red', color: 'white', padding: '20px', marginTop: '20px' }}>
+        <div style={{ backgroundColor: '', color: 'white', padding: '0px', marginTop: '0px', textAlign: 'center'}}>
           <p>Preço do Frete: R$ {precoFrete}</p>
           <p>Deseja solicitar frete?</p>
           <button onClick={confirmarFrete} className='btn2'>Sim, Solicitar Frete</button>
@@ -124,8 +154,8 @@ function SolicitacaoFrete() {
           <input type="number" value={peso} readOnly />
 
           <h4>Valor do Frete: R$ {precoFrete}</h4>
-          <button>Confirmar Frete</button>
-          <button>Imprimir para Motoboy</button>
+          <button className='btn2'>Confirmar Frete</button>
+          <button className='btn2'>Imprimir para Motoboy</button>
         </div>
       )}
 
@@ -133,7 +163,7 @@ function SolicitacaoFrete() {
       {solicitacaoEnviada && (
         <div style={{ marginTop: '20px', color: 'green' }}>
           <p>Solicitação enviada com sucesso!</p>
-          <button onClick={() => window.location.reload()}>Voltar para o início</button>
+          <button onClick={() => window.location.reload()} className='btn2'>Voltar para o início</button>
         </div>
       )}
     </div>
