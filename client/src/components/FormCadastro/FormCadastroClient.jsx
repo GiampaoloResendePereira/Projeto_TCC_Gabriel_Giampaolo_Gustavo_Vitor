@@ -23,6 +23,8 @@ function FormCadastroClient({ titulo, id, handleSubmit, txtBtn, nome }) {
     }
   }, [id]); // Agora a dependência é o id, isso garante que sempre que id mudar, o useEffect será chamado.
 
+ 
+
   // Função para buscar os dados do cliente
   async function baixarClient(id) {
     try {
