@@ -1,20 +1,25 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
+<<<<<<< HEAD
 h1, h2 {
+=======
+/* h1 {
+  border: 2px solid #a1a0a0; 
+>>>>>>> codigo-gustavo
   border-radius: 15px;    
   padding: 10px;       
   color: black;
-}
+} */
 
-h4 {
+/* h4 {
   background-color: white; 
   color: black; 
   padding: 10px; 
-}
+} */
 
 .btn {
   padding: 10px 20px;
@@ -33,6 +38,7 @@ h4 {
   background-color: red;
 }
 
+<<<<<<< HEAD
 .btn2{
   background-color: rgb(230, 39, 39);
 }
@@ -41,3 +47,9 @@ h4 {
   background-color: red;
 }
 
+=======
+.black {
+  background-color: black;
+  color: white;
+}
+>>>>>>> codigo-gustavo

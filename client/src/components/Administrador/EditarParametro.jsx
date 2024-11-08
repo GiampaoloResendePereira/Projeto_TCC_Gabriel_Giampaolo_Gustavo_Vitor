@@ -2,6 +2,8 @@
 import React, { useState } from 'react'; 
 import { Form, Button, Alert } from 'react-bootstrap';
 import '../../styles/global.css';
+import styles from './EditarParametro.module.css'
+import NavBarClient from '../layout/NavBarClient';
 
 const EditarParametro = () => {
   const [parametros, setParametros] = useState({
@@ -29,16 +31,19 @@ const EditarParametro = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h4 className= "estilo" style={{ color: 'white' }}>Editar Parâmetros de Cálculo de Frete</h4>
+    <>
+      <NavBarClient/>
+    <div className= 'container mt-5'>
+      <h4 className= {styles.estilo}>Editar Parâmetros de Cálculo de Frete</h4>
       {showSuccess && (
         <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible>
           Parâmetros atualizados com sucesso!
         </Alert>
       )}
+      <div className={styles.form}>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="pesoMenos1Kg">
-          <Form.Label>Peso menor que 1Kg (R$)</Form.Label>
+          <Form.Label><strong>Peso menor que 1Kg (R$)</strong></Form.Label>
           <Form.Control
             type="number"
             name="pesoMenos1Kg"
@@ -49,7 +54,7 @@ const EditarParametro = () => {
         </Form.Group>
 
         <Form.Group controlId="peso1a3Kg" className="mt-3">
-          <Form.Label>Peso entre 1Kg e 3Kg (R$)</Form.Label>
+          <Form.Label><strong>Peso entre 1Kg e 3Kg (R$)</strong></Form.Label>
           <Form.Control
             type="number"
             name="peso1a3Kg"
@@ -60,7 +65,7 @@ const EditarParametro = () => {
         </Form.Group>
 
         <Form.Group controlId="peso3a8Kg" className="mt-3">
-          <Form.Label>Peso entre 3Kg e 8Kg (R$)</Form.Label>
+          <Form.Label><strong>Peso entre 3Kg e 8Kg (R$)</strong></Form.Label>
           <Form.Control
             type="number"
             name="peso3a8Kg"
@@ -71,7 +76,7 @@ const EditarParametro = () => {
         </Form.Group>
 
         <Form.Group controlId="peso8a12Kg" className="mt-3">
-          <Form.Label>Peso entre 8Kg e 12Kg (R$)</Form.Label>
+          <Form.Label><strong>Peso entre 8Kg e 12Kg (R$)</strong></Form.Label>
           <Form.Control
             type="number"
             name="peso8a12Kg"
@@ -82,7 +87,7 @@ const EditarParametro = () => {
         </Form.Group>
 
         <Form.Group controlId="pesoAcima12Kg" className="mt-3">
-          <Form.Label>Peso acima de 12Kg</Form.Label>
+          <Form.Label><strong>Peso acima de 12Kg</strong></Form.Label>
           <Form.Control
             type="text"
             name="pesoAcima12Kg"
@@ -93,7 +98,7 @@ const EditarParametro = () => {
         </Form.Group>
 
         <Form.Group controlId="precoPorKm" className="mt-3">
-          <Form.Label>Preço por Km (R$)</Form.Label>
+          <Form.Label><strong>Preço por Km (R$)</strong></Form.Label>
           <Form.Control
             type="number"
             name="precoPorKm"
@@ -107,8 +112,10 @@ const EditarParametro = () => {
           Salvar Alterações
         </Button>
       </Form>
+      </div>
       <br />
     </div>
+    </>
   );
 };
 

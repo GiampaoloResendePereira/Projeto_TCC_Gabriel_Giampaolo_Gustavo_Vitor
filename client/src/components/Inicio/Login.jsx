@@ -6,20 +6,30 @@ import adminImg from '../../assets/img/administrador.png';
 import clienteImg from '../../assets/img/cliente.png';
 import motoboyImg from '../../assets/img/motoboy.png';
 
+
+
+
+//props pai
 const Login = () => {
+    var SaveLogin = "";
+    
+  
   const navigate = useNavigate(); // Hook para navegação entre as rotas
 
   // Funções de navegação para cada tela
   const handleAdminLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Administrador
+    
   };
 
   const handleClientLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Cliente
+    
   };
 
   const handleMotoboyLogin = () => {
     navigate("/login-usuario"); // Redireciona para a tela do Motoboy
+    
   };
 
   return (
@@ -53,6 +63,8 @@ const Login = () => {
       </div>
     </div>
   );
+
 };
+
 
 export default Login;

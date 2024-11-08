@@ -1,0 +1,12 @@
+.estilo{
+    background-color: black;
+    color: white;
+    margin: auto;
+    text-align: center;
+    word-spacing: 15px;
+    font-size: 30px;
+}
+
+.form{
+    word-spacing: 10px;
+}

@@ -1,251 +1,235 @@
 {
-    "entregas": [
+
+  "client": [
+    {
+        "id":"1",
+        "nomeClient":"Gustavo Dias",
+        "telefone":"2799845845",
+        "contato":"279965482",
+        "cep":"98145-784",
+        "rua":"Rua dos peregrinos",
+        "numeroResidencia":"98",
+        "bairro":"São Franscisco",
+        "cidade":"Serra",
+        "estado":"ES"
+    }
+],
+
+  "entregas": [
+    {
+      "id": "1",
+      "cliente": "João Silva",
+      "motoboy": "Carlos Oliveira",
+      "status": "Em andamento",
+      "dataAgendamento": "2024-10-10",
+      "dataEntrega": "2024-10-11",
+      "cepOrigem": "29145484",
+      "cepDestinatario": "29145849",
+      "peso": "5kg",
+      "largura": "10cm",
+      "altura": "20cm",
+      "comprimento": "30cm",
+      "distancia": "10km",
+      "custo": "R$ 20,00",
+      "historicoStatus": [
         {
-            "id": "1",
-            "cliente": "João",
-            "cep_origem": "9841-484",
-            "cep_entrega": "5984-895",
-            "motoboy": "Pedro",
-            "contato_client": "27 998819085",
-            "peso_entrega": "7kg",
-            "distancia": "10kg",
-            "custo": "R$ 17,00",
-            "data_inicio": "18/05",
-            "hora_agendada": "10:00",
-            "data_fim": "19/08",
-            "hora_entraga": "12:00",
-            "status": "Em andamento"
+          "status": "Criado",
+          "data": "2024-10-09"
+        },
+        {
+          "status": "Em andamento",
+          "data": "2024-10-10"
         }
-    ],
-    "client": [
+      ]
+    },
+    {
+      "id": "2",
+      "cliente": "Maria Souza",
+      "motoboy": "Fernando Santos",
+      "status": "Concluída",
+      "dataAgendamento": "2024-10-09",
+      "dataEntrega": "2024-10-10",
+      "peso": "3kg",
+      "distancia": "7km",
+      "custo": "R$ 15,00",
+      "historicoStatus": [
         {
-            "id": "1",
-            "nomeClient": "Gustavo Dias",
-            "telefone": "2799845845",
-            "contato": "279965482",
-            "cep": "98145-784",
-            "rua": "Rua dos peregrinos",
-            "numeroResidencia": "98",
-            "bairro": "São Franscisco",
-            "cidade": "Serra",
-            "estado": "ES"
+          "status": "Criado",
+          "data": "2024-10-08"
+        },
+        {
+          "status": "Concluída",
+          "data": "2024-10-09"
         }
-    ],
-    "entregas": [
+      ]
+    },
+    {
+      "id": "3",
+      "cliente": "Roberto Lima",
+      "motoboy": "Gustavo Ferreira",
+      "status": "Cancelada",
+      "dataAgendamento": "2024-10-08",
+      "dataEntrega": null,
+      "peso": "2kg",
+      "distancia": "5km",
+      "custo": "R$ 10,00",
+      "historicoStatus": [
         {
-            "id": 1,
-            "cliente": "João Silva",
-            "motoboy": "Carlos Oliveira",
-            "status": "Em andamento",
-            "dataAgendamento": "2024-10-10",
-            "dataEntrega": "2024-10-11",
-            "cepOrigem": "29145484",
-            "cepDestinatario":"29145849",
-            "peso": "5kg",
-            "largura": "10cm",
-            "altura": "20cm",
-            "comprimento": "30cm",
-            "distancia": "10km",
-            "custo": "R$ 20,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-09"
-                },
-                {
-                    "status": "Em andamento",
-                    "data": "2024-10-10"
-                }
-            ]
+          "status": "Criado",
+          "data": "2024-10-07"
         },
         {
-            "id": 2,
-            "cliente": "Maria Souza",
-            "motoboy": "Fernando Santos",
-            "status": "Concluída",
-            "dataAgendamento": "2024-10-09",
-            "dataEntrega": "2024-10-10",
-            "peso": "3kg",
-            "distancia": "7km",
-            "custo": "R$ 15,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-08"
-                },
-                {
-                    "status": "Concluída",
-                    "data": "2024-10-09"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "cliente": "Roberto Lima",
-            "motoboy": "Gustavo Ferreira",
-            "status": "Cancelada",
-            "dataAgendamento": "2024-10-08",
-            "dataEntrega": null,
-            "peso": "2kg",
-            "distancia": "5km",
-            "custo": "R$ 10,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-07"
-                },
-                {
-                    "status": "Cancelada",
-                    "data": "2024-10-08"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "cliente": "Ana Paula",
-            "motoboy": "Lucas Martins",
-            "status": "Em andamento",
-            "dataAgendamento": "2024-10-11",
-            "dataEntrega": null,
-            "peso": "10kg",
-            "distancia": "15km",
-            "custo": "R$ 30,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-10"
-                },
-                {
-                    "status": "Em andamento",
-                    "data": "2024-10-11"
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "cliente": "Juliana Costa",
-            "motoboy": "Tiago Almeida",
-            "status": "Concluída",
-            "dataAgendamento": "2024-10-05",
-            "dataEntrega": "2024-10-06",
-            "peso": "8kg",
-            "distancia": "12km",
-            "custo": "25,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-04"
-                },
-                {
-                    "status": "Concluída",
-                    "data": "2024-10-05"
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "cliente": "Ricardo Gomes",
-            "motoboy": "Maria Fernandes",
-            "status": "Em andamento",
-            "dataAgendamento": "2024-10-12",
-            "dataEntrega": null,
-            "peso": "1kg",
-            "distancia": "3km",
-            "custo": "8,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-11"
-                },
-                {
-                    "status": "Em andamento",
-                    "data": "2024-10-12"
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "cliente": "Paulo Henrique",
-            "motoboy": "Fernanda Dias",
-            "status": "Concluída",
-            "dataAgendamento": "2024-10-06",
-            "dataEntrega": "2024-10-06",
-            "peso": "4kg",
-            "distancia": "6km",
-            "custo": "12,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-05"
-                },
-                {
-                    "status": "Concluída",
-                    "data": "2024-10-06"
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "cliente": "Tatiane Rocha",
-            "motoboy": "Vinícius Pereira",
-            "status": "Em andamento",
-            "dataAgendamento": "2024-10-13",
-            "dataEntrega": null,
-            "peso": "7kg",
-            "distancia": "8km",
-            "custo": "18,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-12"
-                },
-                {
-                    "status": "Em andamento",
-                    "data": "2024-10-13"
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "cliente": "Sofia Martins",
-            "motoboy": "João Victor",
-            "status": "Concluída",
-            "dataAgendamento": "2024-10-07",
-            "dataEntrega": "2024-10-08",
-            "peso": "6kg",
-            "distancia": "9km",
-            "custo": "15,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-06"
-                },
-                {
-                    "status": "Concluída",
-                    "data": "2024-10-07"
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "cliente": "Felipe Carvalho",
-            "motoboy": "Bruno Silva",
-            "status": "Cancelada",
-            "dataAgendamento": "2024-10-10",
-            "dataEntrega": null,
-            "peso": "2kg",
-            "distancia": "4km",
-            "custo": "10,00",
-            "historicoStatus": [
-                {
-                    "status": "Criado",
-                    "data": "2024-10-09"
-                },
-                {
-                    "status": "Cancelada",
-                    "data": "2024-10-10"
-                }
-            ]
+          "status": "Cancelada",
+          "data": "2024-10-08"
         }
-    ]
+      ]
+    },
+    {
+      "id": "4",
+      "cliente": "Ana Paula",
+      "motoboy": "Lucas Martins",
+      "status": "Em andamento",
+      "dataAgendamento": "2024-10-11",
+      "dataEntrega": null,
+      "peso": "10kg",
+      "distancia": "15km",
+      "custo": "R$ 30,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-10"
+        },
+        {
+          "status": "Em andamento",
+          "data": "2024-10-11"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "cliente": "Juliana Costa",
+      "motoboy": "Tiago Almeida",
+      "status": "Concluída",
+      "dataAgendamento": "2024-10-05",
+      "dataEntrega": "2024-10-06",
+      "peso": "8kg",
+      "distancia": "12km",
+      "custo": "25,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-04"
+        },
+        {
+          "status": "Concluída",
+          "data": "2024-10-05"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "cliente": "Ricardo Gomes",
+      "motoboy": "Maria Fernandes",
+      "status": "Em andamento",
+      "dataAgendamento": "2024-10-12",
+      "dataEntrega": null,
+      "peso": "1kg",
+      "distancia": "3km",
+      "custo": "8,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-11"
+        },
+        {
+          "status": "Em andamento",
+          "data": "2024-10-12"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "cliente": "Paulo Henrique",
+      "motoboy": "Fernanda Dias",
+      "status": "Concluída",
+      "dataAgendamento": "2024-10-06",
+      "dataEntrega": "2024-10-06",
+      "peso": "4kg",
+      "distancia": "6km",
+      "custo": "12,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-05"
+        },
+        {
+          "status": "Concluída",
+          "data": "2024-10-06"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "cliente": "Tatiane Rocha",
+      "motoboy": "Vinícius Pereira",
+      "status": "Em andamento",
+      "dataAgendamento": "2024-10-13",
+      "dataEntrega": null,
+      "peso": "7kg",
+      "distancia": "8km",
+      "custo": "18,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-12"
+        },
+        {
+          "status": "Em andamento",
+          "data": "2024-10-13"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "cliente": "Sofia Martins",
+      "motoboy": "João Victor",
+      "status": "Concluída",
+      "dataAgendamento": "2024-10-07",
+      "dataEntrega": "2024-10-08",
+      "peso": "6kg",
+      "distancia": "9km",
+      "custo": "15,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-06"
+        },
+        {
+          "status": "Concluída",
+          "data": "2024-10-07"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "cliente": "Felipe Carvalho",
+      "motoboy": "Bruno Silva",
+      "status": "Cancelada",
+      "dataAgendamento": "2024-10-10",
+      "dataEntrega": null,
+      "peso": "2kg",
+      "distancia": "4km",
+      "custo": "10,00",
+      "historicoStatus": [
+        {
+          "status": "Criado",
+          "data": "2024-10-09"
+        },
+        {
+          "status": "Cancelada",
+          "data": "2024-10-10"
+        }
+      ]
+    }
+  ]
 }
