@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import logo from '../../assets/img/logo.png'; // Certifique-se de que o caminho para a logo está correto
 import styles from '../../styles/LoginUsuario.css';
 import { Link } from "react-router-dom";
-import Login from "./Login";
 
 
 const LoginAdmin = () => {
@@ -29,7 +28,6 @@ const LoginAdmin = () => {
   }
 
   //colocar o evento handlelogin dentro de logintipo
-
   const handleLogin = (e) => {
     e.preventDefault();
     let UsuaLogin = "";

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/SolicitacaoTransporte.css';
+import styles from '../../styles/SolicitacaoTransporte.css';
 
 function SolicitacaoFrete() {
   // Estados para os campos iniciais
@@ -35,9 +35,8 @@ function SolicitacaoFrete() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div  classNamme ={styles.black} style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
       <h2>Solicitação de Frete</h2>
-
       {/* Formulário Inicial */}
       <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
         <div>

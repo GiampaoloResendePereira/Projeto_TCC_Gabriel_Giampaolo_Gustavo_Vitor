@@ -8,9 +8,6 @@ import motoboyImg from '../../assets/img/motoboy.png';
 
 
 
-function filho ({SaveLoginADM,}){
-
-}
 
 //props pai
 const Login = () => {
@@ -21,19 +18,16 @@ const Login = () => {
 
   // Funções de navegação para cada tela
   const handleAdminLogin = () => {
-    SaveLogin = "loginAdm"
     navigate("/login-usuario"); // Redireciona para a tela do Administrador
     
   };
 
   const handleClientLogin = () => {
-    SaveLogin = "loginClient";
     navigate("/login-usuario"); // Redireciona para a tela do Cliente
     
   };
 
   const handleMotoboyLogin = () => {
-    SaveLogin = "loginMotoboy"
     navigate("/login-usuario"); // Redireciona para a tela do Motoboy
     
   };
