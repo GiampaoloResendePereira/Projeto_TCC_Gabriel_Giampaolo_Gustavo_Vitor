@@ -27,7 +27,7 @@ function GerenciamentoClient() {
     // Função para aplicar o filtro (aqui pode adicionar lógica para buscar os dados filtrados)
     const handleFilterSubmit = (e) => {
         e.preventDefault();
-        // Lógica para filtrar os dados vai aqui
+        // Lógica para filtrar os dados vai aqui (você pode fazer uma requisição com os filtros ou filtrar localmente)
         console.log('Filtros aplicados:', filters);
     };
 
@@ -75,41 +75,8 @@ function GerenciamentoClient() {
                 </div>
             </Form>
 
-            {/* Tabela de Entregas */}
-            <Table striped bordered hover>
-                <thead>
-                <TabelaCliente/>
-                    <tr>
-                        <th>Código</th>
-                        <th>Cliente</th>
-                        <th>Motoboy</th>
-                        <th>Status</th>
-                        <th>Data Agendamento</th>
-                        <th>Data Entrega</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* Exemplo de dados na tabela */}
-                    <tr>
-                        <td>001</td>
-                        <td>Cliente A</td>
-                        <td>Motoboy 1</td>
-                        <td>Pendente</td>
-                        <td>20/10/2024</td>
-                        <td>—</td>
-                        <td>
-                            <Button variant="danger" className="me-2">Detalhes</Button>
-                       
-
-
-
-                            <Button variant="danger" className="me-2">Detalhes</Button>
-                        </td>
-                    </tr>
-                    {/* Continue com mais dados */}
-                </tbody>
-            </Table>
+            {/* Passando os filtros para o componente TabelaCliente */}
+            <TabelaCliente filters={filters} />
         </div>
     );
 }

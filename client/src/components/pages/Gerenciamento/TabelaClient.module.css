@@ -6,11 +6,22 @@
 .edit{
     width: 100%;
   }
+.tabelaClient th{
+  background-color: red;
+  font-size: 16px;
+}
+
+.tableClient{
+  width: 120%;
+  height: 150px;
+}
+
+
   @media(max-width:768px){
     .aulas{
       width: 100%;
     }
-    .tabelaAulas{
+    .tabelaClient{
       font-size: 15px;
     }
     .fim{
