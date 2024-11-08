@@ -80,7 +80,7 @@ function FormCadastroClient({ titulo, id, handleSubmit, txtBtn, nome }) {
     }
 
     // Navega para a página de gerenciamento
-    navigate(`/GerenciamentoClient/${nome}`);
+    navigate(`/gerenciamento_client/${nome}`);
   }
 
   return (

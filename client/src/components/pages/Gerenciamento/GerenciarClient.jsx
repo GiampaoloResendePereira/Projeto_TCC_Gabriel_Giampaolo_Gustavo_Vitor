@@ -78,6 +78,7 @@ function GerenciamentoClient() {
             {/* Tabela de Entregas */}
             <Table striped bordered hover>
                 <thead>
+                <TabelaCliente/>
                     <tr>
                         <th>Código</th>
                         <th>Cliente</th>
@@ -102,14 +103,13 @@ function GerenciamentoClient() {
                        
 
 
-                       
+
                             <Button variant="danger" className="me-2">Detalhes</Button>
                         </td>
                     </tr>
                     {/* Continue com mais dados */}
                 </tbody>
             </Table>
-            <TabelaCliente/>
         </div>
     );
 }

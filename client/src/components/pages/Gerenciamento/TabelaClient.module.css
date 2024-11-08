@@ -1,0 +1,19 @@
+.tabela{
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+}
+.edit{
+    width: 100%;
+  }
+  @media(max-width:768px){
+    .aulas{
+      width: 100%;
+    }
+    .tabelaAulas{
+      font-size: 15px;
+    }
+    .fim{
+      display: none;
+    }
+  }
