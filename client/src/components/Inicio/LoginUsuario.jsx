@@ -19,7 +19,7 @@ const LoginAdmin = () => {
     if (UsuaLogin === "admin") {
       navigate("/administrador");
     } else if (UsuaLogin === "cliente") {
-      navigate("/cliente");
+      navigate("/frete");
 
     } else {
       alert("credenciais incorretas")

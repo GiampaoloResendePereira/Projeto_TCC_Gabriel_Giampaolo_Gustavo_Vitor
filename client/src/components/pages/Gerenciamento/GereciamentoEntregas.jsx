@@ -8,7 +8,7 @@ import NavBarAdmin from '../../layout/NavBarAdmin';
 
 
 
-function GerenciamentoClient() {
+function GerenciamentoEntregasClient() {
     // Estado para armazenar os filtros
     const [filters, setFilters] = useState({
         codigo: '',
@@ -87,4 +87,4 @@ function GerenciamentoClient() {
     );
 }
 
-export default GerenciamentoClient;
+export default GerenciamentoEntregasClient;
