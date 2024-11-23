@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../styles/SolicitacaoTransporte.css';
+import styles from './styles/SolicitacaoFrete.module.css'
 
 function SolicitacaoFrete() {
   // Estados para os campos iniciais
