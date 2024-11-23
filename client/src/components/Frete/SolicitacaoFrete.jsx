@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles/SolicitacaoFrete.module.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function SolicitacaoFrete() {
   // Estados para os campos iniciais
@@ -14,6 +16,27 @@ function SolicitacaoFrete() {
   const [precoFrete, setPrecoFrete] = useState(null);
   const [confirmandoFrete, setConfirmandoFrete] = useState(false);
   const [solicitacaoEnviada, setSolicitacaoEnviada] = useState(false);
+
+
+  // State para dados do destinatário e do remetente
+  const navigate = useNavigate();
+  const [nomeRemetente, setNomeRemetente] = useState('');
+  const [cpfRemetente, setCpfRemetente] = useState('');
+  const [cepRemetente, setCepRemetente] = useState('');
+  const [logradouroRemetente, setLogardouroRemetente] = useState('');
+  const [numeroResidencia, setNumeroResidencia] = useState('');
+  const [complementoRemetente, setComplementoRemetente] = useState('');
+  const [bairroRemetente, setBairroRemetente] = useState('');
+  const [cidadeRemetente, setCidadeRemetente] = useState('');
+  const [estadoRemetente, setEstadoRemetente] = useState('');
+  const [contatoRemetente, setContatoRemetente] = useState('');
+  const [telefoneRemetente, setTelefoneRemetente] = useState('');
+  const [segundoContato, setSegundoContato] = useState('');
+  const [emailRemetente, setEmailRemetente] = useState('');
+
+
+
+
 
   // Função para calcular frete
   const calcularFrete = () => {
@@ -38,10 +61,10 @@ function SolicitacaoFrete() {
     <div className={styles.color}>
       <div className={`${styles.estilo} container`}>
         <div className={styles.titulo}>
-        <h1>Solicitação de Frete</h1>
+          <h1>Solicitação de Frete</h1>
         </div>
         {/* Formulário Inicial */}
-        <div className ={styles.estilo_form}>
+        <div className={styles.estilo_form}>
           <div>
             <label>Digite CEP de origem:</label>
             <input type="text" value={cepOrigem} onChange={(e) => setCepOrigem(e.target.value)} />
@@ -75,44 +98,60 @@ function SolicitacaoFrete() {
           </div>
         )}
 
+
         {/* Formulário Completo de Solicitação */}
         {solicitacaoEnviada && (
           <div className={styles.estiloRemetente}>
             <h3>Dados do Remetente</h3>
-            <label>Logradouro:</label>
-            <input type="text" />
-            <label>Bairro:</label>
-            <input type="text" />
-            <label>Número (opcional):</label>
-            <input type="text" />
-            <label>Complemento (opcional):</label>
-            <input type="text" />
-            <label>Nome do Remetente:</label>
-            <input type="text" />
-            <label>Celular:</label>
-            <input type="text" />
-            <label>CPF ou CNPJ:</label>
-            <input type="text" />
-            <label>Email:</label>
-            <input type="email" />
 
-            <h3>Dados do Destinatário</h3>
-            <label>Logradouro:</label>
-            <input type="text" />
-            <label>Bairro:</label>
-            <input type="text" />
-            <label>Número (opcional):</label>
-            <input type="text" />
-            <label>Complemento (opcional):</label>
-            <input type="text" />
-            <label>Instruções (opcional):</label>
-            <input type="text" />
-            <label>Nome do Destinatário:</label>
-            <input type="text" />
-            <label>Celular:</label>
-            <input type="text" />
-            <label>CPF ou CNPJ:</label>
-            <input type="text" />
+            <form >
+              <label className='form-label'>
+              Nome Remetente:
+              </label>
+              <input 
+              className='form-control'
+              type='text'
+              id='nomeRemetente'
+              value={nomeRemetente}
+              onChange={(e) => setNomeRemetente(e.target.value)}
+              />
+
+              <label>Logradouro:</label>
+              <input type="text" />
+              <label>Bairro:</label>
+              <input type="text" />
+              <label>Número (opcional):</label>
+              <input type="text" />
+              <label>Complemento (opcional):</label>
+              <input type="text" />
+              <label>Nome do Remetente:</label>
+              <input type="text" />
+              <label>Celular:</label>
+              <input type="text" />
+              <label>CPF ou CNPJ:</label>
+              <input type="text" />
+              <label>Email:</label>
+              <input type="email" />
+            </form>
+            <form>
+              <h3>Dados do Destinatário</h3>
+              <label>Logradouro:</label>
+              <input type="text" />
+              <label>Bairro:</label>
+              <input type="text" />
+              <label>Número (opcional):</label>
+              <input type="text" />
+              <label>Complemento (opcional):</label>
+              <input type="text" />
+              <label>Instruções (opcional):</label>
+              <input type="text" />
+              <label>Nome do Destinatário:</label>
+              <input type="text" />
+              <label>Celular:</label>
+              <input type="text" />
+              <label>CPF ou CNPJ:</label>
+              <input type="text" />
+            </form>
 
             <h4>Tamanho e Peso do Pacote</h4>
             <p>O pacote pode ter até 30 kg e até 100 cm em cada lado. A soma dos lados não deve ultrapassar 200 cm.</p>

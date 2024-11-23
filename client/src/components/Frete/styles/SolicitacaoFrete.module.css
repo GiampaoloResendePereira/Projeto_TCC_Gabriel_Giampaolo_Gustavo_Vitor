@@ -24,17 +24,21 @@
     h4 {
         background-color: #ce2d2d;
         padding: 15px;
-        margin: 0 auto;
         color: white;
         margin-top: 10px;
         word-spacing: 10px;
-
+        width: 90%;
+        margin-left: 1px;
+        margin-top: 10px;
     }
 
     .estilo_form {
         border: 6px solid #ce2d2d;
         padding: 20px;
         background-color: rgb(255, 255, 255);
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-radius: 2%;
     }
 
     .estiloRemetente{
