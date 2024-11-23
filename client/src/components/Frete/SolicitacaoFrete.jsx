@@ -24,14 +24,13 @@ function SolicitacaoFrete() {
   const [cpfRemetente, setCpfRemetente] = useState('');
   const [cepRemetente, setCepRemetente] = useState('');
   const [logradouroRemetente, setLogardouroRemetente] = useState('');
-  const [numeroResidencia, setNumeroResidencia] = useState('');
+  const [numeroResidenciaRemetente, setNumeroResidenciaRemetente] = useState('');
   const [complementoRemetente, setComplementoRemetente] = useState('');
   const [bairroRemetente, setBairroRemetente] = useState('');
   const [cidadeRemetente, setCidadeRemetente] = useState('');
   const [estadoRemetente, setEstadoRemetente] = useState('');
   const [contatoRemetente, setContatoRemetente] = useState('');
   const [telefoneRemetente, setTelefoneRemetente] = useState('');
-  const [segundoContato, setSegundoContato] = useState('');
   const [emailRemetente, setEmailRemetente] = useState('');
 
 
@@ -106,29 +105,126 @@ function SolicitacaoFrete() {
 
             <form >
               <label className='form-label'>
-              Nome Remetente:
+                Nome Remetente:
               </label>
-              <input 
-              className='form-control'
-              type='text'
-              id='nomeRemetente'
-              value={nomeRemetente}
-              onChange={(e) => setNomeRemetente(e.target.value)}
+              <input
+                className='form-control'
+                type='text'
+                id='nomeRemetente'
+                value={nomeRemetente}
+                onChange={(e) => setNomeRemetente(e.target.value)}
+              />
+              <label className='form-control'>
+                CPF:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id='cpf'
+                value={cpfRemetente}
+                onChange={(e) => setCpfRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                CEP:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id="cep"
+                value={cepRemetente}
+                onChange={(e) => setCepRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Logradouro:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id='logradouro'
+                value={logradouroRemetente}
+                onChange={(e) => setLogardouroRemetente(e.target.value)} //onChange 
+
+              />
+              <label className='form-label'>
+                Número Residência:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id="numero_residenciaRemetente"
+                value={numeroResidenciaRemetente}
+                onChange={(e) => setNumeroResidenciaRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Complemento::
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id="complemento"
+                value={complementoRemetente}
+                onChange={(e) => setComplementoRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Bairro:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id="bairro"
+                value={bairroRemetente}
+                onChange={(e) => setBairroRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Cidade:
+              </label>
+              <input
+                className='form-control'
+                type="text"
+                id="cidadeRemetente"
+                value={cidadeRemetente}
+                onChange={(e) => setCidadeRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Estado:
+              </label>
+              <input className='form-control'
+                type="text"
+                id='estadoRemtente'
+                value={estadoRemetente}
+                onChange={(e) => setEstadoRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Contato:
+              </label>
+              <input className='form-control'
+                type="text"
+                id='contatoRemtente'
+                value={contatoRemetente}
+                onChange={(e) => setContatoRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Telefone:
+              </label>
+              <input className="form-control"
+                type="text"
+                id='telefoneRemtente'
+                value={telefoneRemetente}
+                onChange={(e) => setTelefoneRemetente(e.target.value)}
+              />
+              <label className='form-label'>
+                Email:
+              </label>
+              <input className="form-control"
+                type="text"
+                id='emailRemetente'
+                value={emailRemetente}
+                onChange={(e) => setEmailRemetente(e.target.value)}
               />
 
-              <label>Logradouro:</label>
-              <input type="text" />
-              <label>Bairro:</label>
-              <input type="text" />
-              <label>Número (opcional):</label>
-              <input type="text" />
-              <label>Complemento (opcional):</label>
-              <input type="text" />
-              <label>Nome do Remetente:</label>
-              <input type="text" />
-              <label>Celular:</label>
-              <input type="text" />
-              <label>CPF ou CNPJ:</label>
+
+
+              <label></label>
               <input type="text" />
               <label>Email:</label>
               <input type="email" />
@@ -178,7 +274,7 @@ function SolicitacaoFrete() {
           </div>
         )}
       </div>
-    </div>
+    </div >
 
   );
 }
