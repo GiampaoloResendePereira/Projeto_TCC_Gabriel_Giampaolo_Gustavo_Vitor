@@ -28,8 +28,10 @@ const NavBarNavigation = () => {
             <img src={logo} alt="Logo" height="50" />
           </Link>
           <Nav className="me-auto">
+          <Nav.Link href="/gerenciamento-entregas">Gerenciamento Entregas</Nav.Link>
             <Nav.Link href="/editar-parametro">Editar Parametro de Frete</Nav.Link>
             <Nav.Link href="/cadastrar-motoboy">Cadastrar Motoboy</Nav.Link>
+            <Nav.Link href="/gerenciamento_client">Gerenciamento Clientes</Nav.Link>
 
             <div className="align-right">
           <button className="sair-button" onClick={handleAdminLogin}>

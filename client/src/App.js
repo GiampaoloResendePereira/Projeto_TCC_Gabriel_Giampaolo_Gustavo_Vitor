@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import TelaAdministrador from "./components/Administrador/TelaAdministrador";
 import GerenciamentoEntregas from "./components/pages/Gerenciamento/GereciamentoEntregas";
 import EditarParametro from "./components/Administrador/EditarParametro";
 import EditarCadastroCliente from "./components/Administrador/EditarCadastroCliente";
@@ -24,16 +23,13 @@ const App = () => {
         <Route path="/frete" element={<TelaCliente />} />
         <Route path="/cadastrar-cliente" element={<CadastroCliente />} />
         <Route path="/tela_cliente" element={<TelaCliente />} />
-        <Route path="/administrador" element={<TelaAdministrador />} />
         <Route path="/gerenciamento-entregas" element={<GerenciamentoEntregas />} />
+
         <Route path="/editar-parametro" element={<EditarParametro />} />
         <Route path="/editar-cadastro-cliente" element={<EditarCadastroCliente />} />
         <Route path="/form_entregas" element={<FormEdit />} />
         <Route path="/cadastro_client" element={<FormCadastroClient />} />
         <Route path="/gerenciamento_client" element={<GerenciamentoClient />} />
-
-        <Route path="/teste" element={<GerenciamentoEntregas />} />
-
         
       </Routes>
 

@@ -17,7 +17,7 @@ const LoginAdmin = () => {
   function verificar(UsuaLogin) {
     //fazendo a tratativa em propos
     if (UsuaLogin === "admin") {
-      navigate("/administrador");
+      navigate("/gerenciamento-entregas");
     } else if (UsuaLogin === "cliente") {
       navigate("/frete");
 
