@@ -1,20 +1,44 @@
 {
-
   "client": [
     {
-        "id":"1",
-        "nomeClient":"Gustavo Dias",
-        "telefone":"2799845845",
-        "contato":"279965482",
-        "cep":"98145-784",
-        "rua":"Rua dos peregrinos",
-        "numeroResidencia":"98",
-        "bairro":"São Franscisco",
-        "cidade":"Serra",
-        "estado":"ES"
+      "id": "2",
+      "nomeClient": "Pedro Santos",
+      "telefone": "27998589594",
+      "contato": "27998589594",
+      "cep": "98185-784",
+      "rua": "Rua Geraldo",
+      "numeroResidencia": "36",
+      "bairro": "Santa Maria",
+      "cidade": "Serra",
+      "estado": "ES"
+    },
+    {
+      "id": "3",
+      "nomeClient": "Victor",
+      "telefone": "2836959858",
+      "contato": "2836959858",
+      "cep": "98185-956",
+      "rua": "Rua Mar",
+      "numeroResidencia": "396",
+      "bairro": "Vitória",
+      "cidade": "Cariacica",
+      "estado": "ES"
     }
-],
-
+  ],
+  "remetente": [
+    {
+      "id": "1",
+      "nome": "Gustavo Dias",
+      "cpf": "20217555489",
+      "cep": "98145-784",
+      "logradouro": "Rua dos peregrinos",
+      "numeroResidencia": "98",
+      "bairro": "São Franscisco",
+      "cidade": "Serra",
+      "estado": "ES",
+      "email": "gustavo@gmail.com"
+    }
+  ],
   "entregas": [
     {
       "id": "1",

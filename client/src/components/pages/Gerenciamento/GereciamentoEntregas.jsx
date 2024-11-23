@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Table, Form, Button } from 'react-bootstrap';
 import '../../../styles/global.css'
 import styles from './GerenciamentoClient.module.css'
-import TabelaCliente from './TabelaClient';
+import TabelaEntregas from './TabelaEntregas';
 import NavBarAdmin from '../../layout/NavBarAdmin';
 
 
@@ -81,7 +81,7 @@ function GerenciamentoClient() {
                 </Form>
 
                 {/* Passando os filtros para o componente TabelaCliente */}
-                <TabelaCliente filters={filters} />
+                 <TabelaEntregas filters={filters} /> 
             </div>
         </>
     );

@@ -29,7 +29,6 @@ const NavBarClient = () => {
           </Link>
           <Nav className="me-auto">
             <Nav.Link href="/cliente">Simular Frete</Nav.Link>
-            <Nav.Link href="/cadastrar-motoboy">Cadastrar Motoboy</Nav.Link>
 
             <div className="align-right">
           <button className="sair-button" onClick={handleAdminLogin}>
