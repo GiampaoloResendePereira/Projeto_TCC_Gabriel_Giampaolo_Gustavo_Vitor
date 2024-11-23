@@ -1,26 +1,53 @@
-.color{
-    background-color: white;
-    margin: 0; /*preencher toda a página*/
-}
+    .color {
+        background-color: rgb(236, 234, 234);
+        /* Define a cor de fundo */
+        min-height: 100vh;
+        /* Garante que a altura seja de 100% da viewport */
+        margin: 0;
+        /* Remove margens padrão */
+        padding: 0;
+        /* Remove preenchimento padrão */
+    }
 
-.estilo {
-  width: 950px;
-  height: 300px;
- 
-}
-.estilo label, p{
-    word-spacing: 5px;
-}
+    .estilo {
+        width: 950px;
+        height: 300px;
 
-.black {
-background-color: black;
-padding: 20px;
-margin: 0 auto;
-}
-.estilo_form{
-border: 1px solid #ccc;
-padding: 20px;
+    }
 
+    .estilo label,
+    p {
+        word-spacing: 5px;
+    }
 
-}
+    .black h2,
+    h4 {
+        background-color: #ce2d2d;
+        padding: 15px;
+        margin: 0 auto;
+        color: white;
+        margin-top: 10px;
+        word-spacing: 10px;
 
+    }
+
+    .estilo_form {
+        border: 6px solid #ce2d2d;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .estiloRemetente{
+        border: 6px solid #ce2d2d;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .estiloRemetente h3{
+        background-color: #ce2d2d;
+        padding: 15px;
+        margin: 0 auto;
+        color: white;
+        margin-top: 10px;
+        word-spacing: 10px;
+    }

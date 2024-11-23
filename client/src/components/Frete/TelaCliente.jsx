@@ -29,6 +29,7 @@ const TelaCliente = () => {
             <img src={logo} alt="Logo" height="50" />
           </Link>
           <Nav className="me-auto">
+            
               <div className="align-right">
                 <button className="sair-button" onClick={handleAdminLogin}>
                   Sair

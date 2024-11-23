@@ -37,11 +37,11 @@ function SolicitacaoFrete() {
   return (
     <div className={styles.color}>
       <div className={`${styles.estilo} container`}>
-        <div classNamme={styles.black} >
-          <h2>Solicitação de Frete</h2>
+        <div className={styles.titulo}>
+        <h1>Solicitação de Frete</h1>
         </div>
         {/* Formulário Inicial */}
-        <form className ={styles.estilo_form}>
+        <div className ={styles.estilo_form}>
           <div>
             <label>Digite CEP de origem:</label>
             <input type="text" value={cepOrigem} onChange={(e) => setCepOrigem(e.target.value)} />
@@ -64,7 +64,7 @@ function SolicitacaoFrete() {
           </div>
           <br />
           <button onClick={calcularFrete} className='btn'>Calcular Frete</button>
-        </form>
+        </div>
 
         {/* Resultado do Cálculo do Frete */}
         {precoFrete && confirmandoFrete && (
@@ -77,7 +77,7 @@ function SolicitacaoFrete() {
 
         {/* Formulário Completo de Solicitação */}
         {solicitacaoEnviada && (
-          <div style={{ marginTop: '20px' }}>
+          <div className={styles.estiloRemetente}>
             <h3>Dados do Remetente</h3>
             <label>Logradouro:</label>
             <input type="text" />
