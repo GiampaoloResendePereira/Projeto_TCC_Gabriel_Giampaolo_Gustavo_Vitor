@@ -1,0 +1,26 @@
+.color{
+    background-color: white;
+    margin: 0; /*preencher toda a página*/
+}
+
+.estilo {
+  width: 950px;
+  height: 300px;
+ 
+}
+.estilo label, p{
+    word-spacing: 5px;
+}
+
+.black {
+background-color: black;
+padding: 20px;
+margin: 0 auto;
+}
+.estilo_form{
+border: 1px solid #ccc;
+padding: 20px;
+
+
+}
+

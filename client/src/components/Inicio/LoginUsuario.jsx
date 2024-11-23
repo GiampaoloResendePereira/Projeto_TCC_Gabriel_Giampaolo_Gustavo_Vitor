@@ -71,7 +71,7 @@ const LoginAdmin = () => {
             className="login-input"
           />
           <div>
-            <Link className="btn btn-danger mt-2" to="/">Voltar</Link>
+          
             <Link className="btn btn-danger mt-2" to="/cadastro_client">Cadastrar</Link>
           </div>
           <Button variant="danger" type="submit" className="mt-4" >

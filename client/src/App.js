@@ -26,12 +26,13 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cliente" element={<TelaCliente />} />
         <Route path="/cadastrar-cliente" element={<CadastroCliente />} />
         <Route path="/tela_cliente" element={<TelaCliente />} />
         <Route path="/administrador" element={<TelaAdministrador />} />
         <Route path="/gerenciamento-entregas" element={<GerenciamentoEntrega />} />
-        <Route path="/editar-" element={<EditarParametro />} />
-        <Route path="/editparametroar-cadastro-cliente" element={<EditarCadastroCliente />} />
+        <Route path="/editar-parametro" element={<EditarParametro />} />
+        <Route path="/editar-cadastro-cliente" element={<EditarCadastroCliente />} />
         <Route path="/form_entregas" element={<FormEdit />} />
         <Route path="/cadastro_client" element={<FormCadastroClient />} />
         <Route path="/login_inicio" element={<LoginInicio />} />
