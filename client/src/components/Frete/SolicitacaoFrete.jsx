@@ -267,7 +267,7 @@ function SolicitacaoFrete({id, handleSubmit}) {
               <input type="text" />
               <label>CPF ou CNPJ:</label>
               <input type="text" />
-            </form>
+            
 
             <h4>Tamanho e Peso do Pacote</h4>
             <p>O pacote pode ter até 30 kg e até 100 cm em cada lado. A soma dos lados não deve ultrapassar 200 cm.</p>
@@ -283,6 +283,7 @@ function SolicitacaoFrete({id, handleSubmit}) {
             <h4>Valor do Frete: R$ {precoFrete}</h4>
             <button type='submit'>Confirmar Frete</button>
             <button>Imprimir para Motoboy</button>
+            </form>
           </div>
         )}
 

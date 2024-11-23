@@ -9,8 +9,7 @@ function FormAula({ titulo, txtBtn, handleSubmit, id, tipo }) {
     const [cliente, setCliente] = useState('');
     const [motoboy, setMotoboy] = useState('');
     const [status, setStatus] = useState('');
-    const [dataInicio, setDataInicio] = useState('');
-    const [dataEntrega, setdataFim] = useState('');
+
 
     useEffect(() => {
         if (id) {
