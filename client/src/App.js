@@ -32,6 +32,9 @@ const App = () => {
         <Route path="/cadastro_client" element={<FormCadastroClient />} />
         <Route path="/gerenciamento_client" element={<GerenciamentoClient />} />
 
+        <Route path="/teste" element={<GerenciamentoEntregas />} />
+
+        
       </Routes>
 
     </Router>
