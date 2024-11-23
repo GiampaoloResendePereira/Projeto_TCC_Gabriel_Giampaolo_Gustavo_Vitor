@@ -3,7 +3,7 @@ import styles from './styles/SolicitacaoFrete.module.css'
 import { useNavigate } from 'react-router-dom';
 
 
-function SolicitacaoFrete() {
+function SolicitacaoFrete({id, handleSubmit}) {
   // Estados para os campos iniciais
   const [cepOrigem, setCepOrigem] = useState('');
   const [cepDestino, setCepDestino] = useState('');
@@ -34,7 +34,34 @@ function SolicitacaoFrete() {
   const [emailRemetente, setEmailRemetente] = useState('');
 
 
+  //função para enviar dados do formulario
+  function submit(e) {
+    e.preventDefalt();
 
+    const formRemetente = {
+      nome: nomeRemetente,
+      cpf: cpfRemetente,
+      cep: cepRemetente,
+      logradouro: logradouroRemetente,
+      numeroResidencia: numeroResidenciaRemetente,
+      complemento: complementoRemetente,
+      bairro: bairroRemetente,
+      cidade: cidadeRemetente,
+      estado: estadoRemetente,
+      contato: contatoRemetente,
+      telefone: telefoneRemetente,
+      email: emailRemetente,
+      chave: null,
+    };
+  
+    //verifica se a função handleSubmit foi passada corretamente
+  if(typeof handleSubmit === 'function'){ 
+    handleSubmit(formRemetente, id);//enviar dados do formulario
+  }else{
+    console.erro("erro ao enviar o formulário")
+  }
+  navigate(`/gerenciamento-entregas/${id}`);
+}
 
 
   // Função para calcular frete
@@ -103,7 +130,7 @@ function SolicitacaoFrete() {
           <div className={styles.estiloRemetente}>
             <h3>Dados do Remetente</h3>
 
-            <form >
+            <form  onSubmit={submit}>
               <label className='form-label'>
                 Nome Remetente:
               </label>
@@ -221,13 +248,6 @@ function SolicitacaoFrete() {
                 value={emailRemetente}
                 onChange={(e) => setEmailRemetente(e.target.value)}
               />
-
-
-
-              <label></label>
-              <input type="text" />
-              <label>Email:</label>
-              <input type="email" />
             </form>
             <form>
               <h3>Dados do Destinatário</h3>
@@ -261,7 +281,7 @@ function SolicitacaoFrete() {
             <input type="number" value={peso} readOnly />
 
             <h4>Valor do Frete: R$ {precoFrete}</h4>
-            <button>Confirmar Frete</button>
+            <button type='submit'>Confirmar Frete</button>
             <button>Imprimir para Motoboy</button>
           </div>
         )}
