@@ -1,0 +1,19 @@
+.center {
+    width: 500px;
+    height: 400px;
+    margin-left: 12%;
+    margin-top: 50px;
+}
+
+.login_container {
+    padding: 20px;
+    width: 700px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f0f0f0;
+    height: 700px;
+    align-items: center; 
+    border-radius: 2%;
+   
+}

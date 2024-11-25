@@ -1,86 +1,84 @@
-// src/pages/LoginAdmin.jsx
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import logo from '../../assets/img/logo.png'; // Certifique-se de que o caminho para a logo está correto
-import styles from '../../styles/LoginUsuario.css';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/img/logo.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './Styles/LoginUsuario.module.css'
 
-
-const LoginAdmin = () => {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+const LoginUsuario = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-
-  //verificando se o valor da variável para direcionar a tela correta
-  function verificar(UsuaLogin) {
-    //fazendo a tratativa em propos
-    if (UsuaLogin === "admin") {
-      navigate("/gerenciamento-entregas");
-    } else if (UsuaLogin === "cliente") {
-      navigate("/frete");
-
-    } else {
-      alert("credenciais incorretas")
-    }
-
-  }
-
-  //colocar o evento handlelogin dentro de logintipo
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    let UsuaLogin = "";
 
-    if (email === "admin@gmail.com" && senha === "admin123") {
-       UsuaLogin = "admin";
-       verificar(UsuaLogin);
-      // chamando function para direcionar o usuário.
-    } else if (email === "cliente@gmail.com" && senha === "cliente123") {
-       UsuaLogin = "cliente"
-       verificar(UsuaLogin);
-    } else if (email === "motoboy@gmail.com" && senha === "motoboy123") {
-      //verificar();
+    // Lógica de autenticação simplificada
+    if (email === 'admin@gmail.com' && senha === 'admin123') {
+      // Redireciona para o perfil do administrador
+      navigate('/administrador');
+    } else if (email === 'cliente@gmail.com' && senha === 'cliente123') {
+      // Redireciona para o perfil do cliente
+      navigate('/cliente');
     } else {
-      alert("Credenciais incorretas para Login.");
+      // Exibe uma mensagem de erro para login inválido
+      alert('Email ou senha incorretos');
     }
+  };
 
-
+  const handleCadastro = () => {
+    navigate('/cadastrar-cliente');
   };
 
   return (
-    <div className="login-container">
-      <div className="login_form">
-        <div className={styles.login_form}>
-          <img src={logo} alt="Logo" className="login-logo" />
-          <h4 className="login-title">Login</h4>
-        </div>
-        <form onSubmit={handleLogin} className="login-inputs">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="login-input"
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            className="login-input"
-          />
-          <div>
-          
-            <Link className="btn btn-danger mt-2" to="/cadastro_client">Cadastrar</Link>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh', // para ocupar a altura total da tela
+      backgroundColor: '#f5f5f5' // opcional, para uma cor de fundo suave
+    }}>
+
+      <div className={styles.login_container} >
+        <img src={logo} alt="Logo" className="login-logo" style={{ width: '250px', height: 'auto', marginBottom: '20px' }} />
+          <div className={styles.center}>
+            <form className="login-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <div className="mb-3">
+                <label htmlFor="nome" className="form-label">Email:</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="Digite seu email"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="nome" className="form-label">Senha:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                  required
+                  placeholder="Digite sua senha"
+
+                />
+              </div>
+              <button type="submit" className="btn btn-danger" style={{ padding: '10px', marginTop: '10px' }}>
+                Entrar
+              </button>
+              <button type="button" className="btn btn-danger" onClick={handleCadastro} style={{ padding: '10px' }}>
+                Cadastrar
+              </button>
+              <a href="/recuperacao-senha" style={{ marginTop: '10px', color: 'black' }}>
+                Esqueceu a senha?
+              </a>
+            </form>
           </div>
-          <Button variant="danger" type="submit" className="mt-4" >
-            Entrar
-          </Button>
-        </form>
       </div>
     </div>
   );
 };
 
-export default LoginAdmin;
+export default LoginUsuario;
