@@ -9,8 +9,8 @@ import TelaCliente from './components/Frete/TelaCliente'
 import FormEdit from "./components/pages/FormEditar/FormEdit";
 import Home from "./components/pages/Home";
 import FormCadastroClient from "./components/FormCadastro/FormCadastroClient";
-
 import GerenciamentoClient from "./components/pages/Gerenciamento/GerenciarClient";
+import CalculoFrete from "./components/Frete/TesteFrete";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/global.css";
@@ -24,12 +24,13 @@ const App = () => {
         <Route path="/cadastrar-cliente" element={<CadastroCliente />} />
         <Route path="/tela_cliente" element={<TelaCliente />} />
         <Route path="/gerenciamento-entregas" element={<GerenciamentoEntregas />} />
-
         <Route path="/editar-parametro" element={<EditarParametro />} />
         <Route path="/editar-cadastro-cliente" element={<EditarCadastroCliente />} />
         <Route path="/form_entregas" element={<FormEdit />} />
         <Route path="/cadastro_client" element={<FormCadastroClient />} />
         <Route path="/gerenciamento_client" element={<GerenciamentoClient />} />
+        <Route path="/teste" element={< CalculoFrete/>} />
+        
         
       </Routes>
 
