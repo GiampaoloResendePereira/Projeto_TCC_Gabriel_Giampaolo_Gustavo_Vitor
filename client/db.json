@@ -25,25 +25,12 @@
       "estado": "ES"
     }
   ],
-  "remetente": [
-    {
-      "id": "1",
-      "nome": "Gustavo Dias",
-      "cpf": "20217555489",
-      "cep": "98145-784",
-      "logradouro": "Rua dos peregrinos",
-      "numeroResidencia": "98",
-      "bairro": "São Franscisco",
-      "cidade": "Serra",
-      "estado": "ES",
-      "email": "gustavo@gmail.com"
-    }
-  ],
   "entregas": [
     {
       "id": "1",
       "cliente": "João Silva",
       "motoboy": "Carlos Oliveira",
+      "status": "Em andamento",
       "dataAgendamento": "2024-10-10",
       "dataEntrega": "2024-10-11",
       "cepOrigem": "29145484",

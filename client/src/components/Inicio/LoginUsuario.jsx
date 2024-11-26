@@ -15,10 +15,10 @@ const LoginUsuario = () => {
     // Lógica de autenticação simplificada
     if (email === 'admin@gmail.com' && senha === 'admin123') {
       // Redireciona para o perfil do administrador
-      navigate('/administrador');
+      navigate('/gerenciamento-entregas');
     } else if (email === 'cliente@gmail.com' && senha === 'cliente123') {
       // Redireciona para o perfil do cliente
-      navigate('/cliente');
+      navigate('/frete');
     } else {
       // Exibe uma mensagem de erro para login inválido
       alert('Email ou senha incorretos');

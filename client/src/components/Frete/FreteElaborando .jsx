@@ -1,26 +1,23 @@
+//usar o o caluclo do frete no repositorio lab e conecat com as telas atuais de calculko de frte
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarClient from '../layout/NavBarClient';
+import styles from './styles/SolicitacaoFrete.module.css'
+import { useNavigate } from 'react-router-dom';
 
-// Tabela de valores por peso
-const tabelaPeso = [
-    { limite: 1, valor: 3.00 },
-    { limite: 3, valor: 5.00 },
-    { limite: 8, valor: 9.00 },
-    { limite: 12, valor: 12.00 },
-    { limite: Infinity, valor: 'Não é possível transportar' },
-];
+function FreteCalculo({ id, handleSubmit }) {
 
-function CalculoFrete() {
-    // Estados para armazenar os valores dos campos
+    //use state
     const [cepOrigem, setCepOrigem] = useState('');
     const [cepDestino, setCepDestino] = useState('');
+    const [largura, setLargura] = useState('');
+    const [altura, setAltura] = useState('');
+    const [comprimento, setComprimento] = useState('');
     const [peso, setPeso] = useState('');
-    const [valorFrete, setValorFrete] = useState(null);
+
     const [errorCepOrigem, setErrorCepOrigem] = useState('');
     const [errorCepDestino, setErrorCepDestino] = useState('');
     const [errorPeso, setErrorPeso] = useState('');
     const [distancia, setDistancia] = useState(0);
+
 
     // Função para validar o formato do CEP
     const validarCep = (cep) => {
@@ -74,7 +71,8 @@ function CalculoFrete() {
         }
     };
 
-    // Função para lidar com o envio do formulário sem recarregar a página
+
+    // Função para lidar com o envio do formulário
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -126,84 +124,17 @@ function CalculoFrete() {
         alert('Frete solicitado com sucesso!');
     };
 
+    function subimit(e) {
+        e.preventDefalt();
+    }
+
     return (
         <>
-            <NavBarClient/>
+            <div>
+                
 
-            <div className="container bg-light p-5">
-                <h2 className="bg-dark text-white rounded p-3 mb-4">Cálculo de Frete</h2>
-
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="cepOrigem" className="form-label">CEP de Origem</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={cepOrigem}
-                            onChange={(e) => setCepOrigem(e.target.value)}
-                            placeholder="Digite o CEP de origem"
-                        />
-                        {errorCepOrigem && <span style={{ color: 'red' }}>{errorCepOrigem}</span>}
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="cepDestino" className="form-label">CEP de Destino</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={cepDestino}
-                            onChange={(e) => setCepDestino(e.target.value)}
-                            placeholder="Digite o CEP de destino"
-                        />
-                        {errorCepDestino && <span style={{ color: 'red' }}>{errorCepDestino}</span>}
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="peso" className="form-label">Peso</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={peso}
-                            onChange={(e) => setPeso(e.target.value)}
-                            placeholder="Digite o peso"
-                        />
-                        {errorPeso && <span style={{ color: 'red' }}>{errorPeso}</span>}
-                    </div>
-
-                    <button className="btn btn-danger">
-                        Calcular Frete
-                    </button>
-                </form>
-
-                {valorFrete !== null && (
-                    <div style={{
-                        backgroundColor: 'black',
-                        color: 'white',
-                        padding: '15px',
-                        marginTop: '20px',
-                        fontSize: '18px',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                    }}>
-                        {valorFrete === 'Não é possível transportar' ? 'Valor do frete: Não é possível transportar' : `Valor do frete: R$ ${valorFrete.toFixed(2)}`}
-                    </div>
-                )}
-                <br />
-
-                {valorFrete !== null && valorFrete !== 'Não é possível transportar' && (
-                    <button
-                        onClick={handleSolicitarFrete}
-                        className="btn btn-secondary"
-
-                    >
-                        Solicitar Frete
-                    </button>
-                )}
             </div>
-
         </>
     );
 
 }
-
-export default CalculoFrete;

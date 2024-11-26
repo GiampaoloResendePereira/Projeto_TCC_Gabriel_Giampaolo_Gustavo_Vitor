@@ -38,7 +38,7 @@ function GerenciamentoEntregasClient() {
             <NavBarAdmin />
 
             <div className="container mt-5">
-                <h4 className={`${styles.estilo} container`}>Gerenciamento de Clientes</h4>
+                <h4 className={`${styles.estilo} container`}>Gerenciamento de Entregas</h4>
 
                 {/* Filtros de Pesquisa */}
                 <Form onSubmit={handleFilterSubmit} className="mb-4">
